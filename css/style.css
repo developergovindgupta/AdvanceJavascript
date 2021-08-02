@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+}
+body {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+hr {
+	margin: 10px 0px 20px 0px;
+}
+.content {
+	display: inline-block;
+	margin: 50px auto;
+}

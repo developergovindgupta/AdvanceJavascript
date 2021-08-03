@@ -1,7 +1,15 @@
 var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {};
 (function (_window) {
 	!String.prototype.trimAll &&
-		(String.prototype.trimAll = function () {
+		/**
+		 * This is a string extension method remove all extra spaces, new line and tab characters from string sentence.
+		 * @returns {string}  String having single space between words of string.
+		 * ---
+		 * @example
+		 * " this         is     sample         string".trimAll()
+		 * OUTPUT :  "this is sample string"
+		 */
+		(String.prototype.trimAll = function trimAll() {
 			let str = this;
 			str = str.trim().replace(/\t/g, ' ').replace(/\r/g, ' ').replace(/\n/g, ' ');
 			while (str.indexOf('  ') >= 0) {
@@ -9,8 +17,23 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			}
 			return str;
 		});
+
 	!String.prototype.toCamelCase &&
-		(String.prototype.toCamelCase = function () {
+		/**
+		 * This is a string extension method convert string to camel case. Input string may be space separated or pascal/kebab/snake case
+		 * @returns {string} String converted to camel case
+		 * ---
+		 * @example
+		 * > "this is sample string".toCamelCase()
+		 * //OUTPUT : "thisIsSampleString"
+		 * > "this-is-sample-string".toCamelCase()
+		 * //OUTPUT : "thisIsSampleString"
+		 * > "ThisIsSampleString".toCamelCase()
+		 * //OUTPUT : "thisIsSampleString"
+		 * > "this_is_sample_string".toCamelCase()
+		 * //OUTPUT : "thisIsSampleString"
+		 */
+		(String.prototype.toCamelCase = function toCamelCase() {
 			let str = this.trimAll();
 			let str2 = '';
 			let isSpace = false;
@@ -31,8 +54,13 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			}
 			return str2;
 		});
+
 	!String.prototype.toKebabCase &&
-		(String.prototype.toKebabCase = function () {
+		/**
+		 * This is string extension method that convert string to kebab case
+		 * @returns {string} string converted in kebab case
+		 */
+		(String.prototype.toKebabCase = function toKebabCase() {
 			let str = this.trimAll();
 			let str2 = '';
 			let isSpace = false;
@@ -189,6 +217,61 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			}
 		});
 
+	!String.prototype.toArray &&
+		(String.prototype.toArray = function () {
+			return this.split('');
+		});
+	!String.prototype.toCodeArray &&
+		(String.prototype.toCodeArray = function () {
+			let arr = [];
+			for (let i = 0, j = this.length; i < j; i++) {
+				arr.push(this.charCodeAt(i));
+			}
+			return arr;
+		});
+	!String.prototype.toCharCodeArray &&
+		(String.prototype.toCharCodeArray = function () {
+			let arr = [];
+			for (let i = 0, j = this.length; i < j; i++) {
+				arr.push({ char: this[i], code: this.charCodeAt(i) });
+			}
+			return arr;
+		});
+	!String.prototype.toCharCode &&
+		(String.prototype.toCharCode = function () {
+			let obj = {};
+			for (let i = 0, j = this.length; i < j; i++) {
+				!obj[this[i]] && (obj[this[i]] = this.charCodeAt(i));
+			}
+			return obj;
+		});
+	!String.prototype.frequency &&
+		(String.prototype.frequency = function (char, insensitive) {
+			if (typeof char === 'boolean') {
+				insensitive = char;
+				char = '';
+			}
+			let str = this;
+			if (insensitive) {
+				str = this.toLowerCase();
+				char && (char = char.toLowerCase());
+			}
+			if (char) {
+				let count = 0;
+				for (let i = 0, j = str.length; i < j; i++) {
+					if (str[i] === char) {
+						count++;
+					}
+				}
+				return count;
+			} else {
+				let obj = {};
+				for (let i = 0, j = str.length; i < j; i++) {
+					obj[str[i]] = (obj[str[i]] || 0) + 1;
+				}
+				return obj;
+			}
+		});
 	!String.prototype.toDateTime &&
 		(String.prototype.toDateTime = function () {
 			let mmm = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
@@ -465,61 +548,6 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 	!String.prototype.toDate &&
 		(String.prototype.toDate = function () {
 			return this.toDateTime().format('dd/MMM/yyyy').toDateTime();
-		});
-	!String.prototype.toArray &&
-		(String.prototype.toArray = function () {
-			return this.split('');
-		});
-	!String.prototype.toCodeArray &&
-		(String.prototype.toCodeArray = function () {
-			let arr = [];
-			for (let i = 0, j = this.length; i < j; i++) {
-				arr.push(this.charCodeAt(i));
-			}
-			return arr;
-		});
-	!String.prototype.toCharCodeArray &&
-		(String.prototype.toCharCodeArray = function () {
-			let arr = [];
-			for (let i = 0, j = this.length; i < j; i++) {
-				arr.push({ char: this[i], code: this.charCodeAt(i) });
-			}
-			return arr;
-		});
-	!String.prototype.toCharCode &&
-		(String.prototype.toCharCode = function () {
-			let obj = {};
-			for (let i = 0, j = this.length; i < j; i++) {
-				!obj[this[i]] && (obj[this[i]] = this.charCodeAt(i));
-			}
-			return obj;
-		});
-	!String.prototype.frequency &&
-		(String.prototype.frequency = function (char, insensitive) {
-			if (typeof char === 'boolean') {
-				insensitive = char;
-				char = '';
-			}
-			let str = this;
-			if (insensitive) {
-				str = this.toLowerCase();
-				char && (char = char.toLowerCase());
-			}
-			if (char) {
-				let count = 0;
-				for (let i = 0, j = str.length; i < j; i++) {
-					if (str[i] === char) {
-						count++;
-					}
-				}
-				return count;
-			} else {
-				let obj = {};
-				for (let i = 0, j = str.length; i < j; i++) {
-					obj[str[i]] = (obj[str[i]] || 0) + 1;
-				}
-				return obj;
-			}
 		});
 
 	!Number.prototype.isNaN &&

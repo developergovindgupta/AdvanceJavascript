@@ -19,4 +19,25 @@ hr {
 .content {
 	display: inline-block;
 	margin: 50px auto;
+	padding: 10px;
+}
+table {
+	border: solid 1px;
+	margin: auto;
+}
+th {
+	padding: 10px;
+	background-color: gray;
+}
+td {
+	padding: 10px;
+}
+tr:nth-child(even) td {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 800px) {
+	.content {
+		margin: auto;
+	}
 }

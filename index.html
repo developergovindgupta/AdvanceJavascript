@@ -10,8 +10,186 @@
 	<body>
 		<div class="content">
 			<h1>AdvanceJavascript.js</h1>
-			<h3>Use Advance JavaScript extension methods and write code very handy.</h3>
+			<h3>a collection of javascript prototype extensions that make your javascript coding very easy and hanndy.</h3>
+			<h3>support both node.js and web browser</h3>
+			<br />
 			<hr />
+			<br />
+			<h2>String Prototype Extensions</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>String.methods</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.trimAll()</td>
+						<td>Remove all extra spaces, new line and tabs from string and return single line text having single space between words.</td>
+					</tr>
+					<tr>
+						<td>.toCamelCase()</td>
+						<td>Convert sentence to camel case. eg. "this is normal string".toCamelCase() -&gt; "thisIsNormalString"</td>
+					</tr>
+					<tr>
+						<td>.toKebabCase()</td>
+						<td>Convert sentence to kebab case. eg. "this is normal string".toKebabCase() -&gt; "this-is-normal-string"</td>
+					</tr>
+					<tr>
+						<td>.toPascalCase()</td>
+						<td>Convert sentence to pascal case. eg. "this is normal string".toPascalCase() -&gt; "ThisIsNormalString"</td>
+					</tr>
+					<tr>
+						<td>.toSnakeCase()</td>
+						<td>Convert sentence to snake case. eg. "this is normal string".toSnakeCase() -&gt; "this_is_normal_string"</td>
+					</tr>
+					<tr>
+						<td>.left(n)</td>
+						<td>Extract number of characters from left. eg. "this is normal string".left(6) -&gt; "this i"</td>
+					</tr>
+					<tr>
+						<td>.right(n)</td>
+						<td>Extract number of characters from right. eg. "this is normal string".right(4) -&gt; "ring"</td>
+					</tr>
+					<tr>
+						<td>.mid(m,n)</td>
+						<td>Extract number of characters (n) from given index (m). eg "this is normal string".mid(8,6) -&gt; "normal"</td>
+					</tr>
+					<tr>
+						<td>.reverse()</td>
+						<td>Reverses the string. eg. "this is normal string".reverse() -&gt; "gnirts lamron si siht"</td>
+					</tr>
+					<tr>
+						<td>.sort()</td>
+						<td>Sort string letters in assending order. eg. "this is normal string".sort() -&gt; " aghiiilmnnorrssstt"</td>
+					</tr>
+					<tr>
+						<td>.sort(fn)</td>
+						<td>Sort string letters according to compare function (fn) passed. . eg. "this is normal string".sort((a, b) =&gt; (a &lt; b ? 1 : -1)) -&gt; "ttsssrronnmliiihga "</td>
+					</tr>
+					<tr>
+						<td>.sortAsc()</td>
+						<td>Sort string letters in assending order. eg. "this is normal string".sortAsc() -&gt; " aghiiilmnnorrssstt"</td>
+					</tr>
+					<tr>
+						<td>.sortDesc()</td>
+						<td>Sort string letters in descending order. eg. "this is normal string".sortDesc() -&gt; "ttsssrronnmliiihga "</td>
+					</tr>
+					<tr>
+						<td>.distinct()</td>
+						<td>Extract unique/distinct characters from string and return string. eg. "this is normal string".distinct() -&gt; "this normalg"</td>
+					</tr>
+					<tr>
+						<td>.toNumber()</td>
+						<td>Convert string number to numeric value or NaN. eg. "123.45".toNumber() -&gt; 123.45</td>
+					</tr>
+					<tr>
+						<td>.toNumber()</td>
+						<td>Convert string number to numeric value or NaN. eg. "a123.45".toNumber() -&gt; NaN</td>
+					</tr>
+					<tr>
+						<td>.toNumber(NaN_Value)</td>
+						<td>Convert string number to numeric value. on fail return NaN_Value. eg. "a123.45".toNumber(0) -&gt; 0</td>
+					</tr>
+					<tr>
+						<td>.toNumber(itself)</td>
+						<td>Convert string number to numeric value. on fail return original string itself. eg. "a123.45".toNumber(itself) -&gt; "a123.45"</td>
+					</tr>
+					<tr>
+						<td>.parseInt()</td>
+						<td>Convert string to integer value and round up the fraction value. eg. "123.45".parseInt() -&gt; 123</td>
+					</tr>
+					<tr>
+						<td>.parseInt()</td>
+						<td>Convert string to integer value and round up the fraction value. eg. "a123.45".parseInt() -&gt; NaN</td>
+					</tr>
+					<tr>
+						<td>.parseInt(redix)</td>
+						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".parseInt(16) -&gt; 44847</td>
+					</tr>
+					<tr>
+						<td>.parseInt(redix,NaN_Value)</td>
+						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".parseInt(10,0) -&gt; 0</td>
+					</tr>
+					<tr>
+						<td>.parseInt(redix,itself)</td>
+						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".parseInt(8,itself) -&gt; "AF2F"</td>
+					</tr>
+					<tr>
+						<td>.parseFloat()</td>
+						<td>Convert string number to numeric value or NaN. eg. "123.45".parseFloat() -&gt; 123.45</td>
+					</tr>
+					<tr>
+						<td>.parseFloat()</td>
+						<td>Convert string number to numeric value or NaN. eg. "a123.45".parseFloat() -&gt; NaN</td>
+					</tr>
+					<tr>
+						<td>.parseFloat(NaN_Value)</td>
+						<td>Convert string number to numeric value. on fail return NaN_Value. eg. "a123.45".parseFloat(0) -&gt; 0</td>
+					</tr>
+					<tr>
+						<td>.parseFloat(itself)</td>
+						<td>Convert string number to numeric value. on fail return original string itself. eg. "a123.45".parseFloat(itself) -&gt; "a123.45"</td>
+					</tr>
+					<tr>
+						<td>.toInt()</td>
+						<td>Convert string to integer value and round up the fraction value. eg. "123.45".toInt() -&gt; 123</td>
+					</tr>
+					<tr>
+						<td>.toInt()</td>
+						<td>Convert string to integer value and round up the fraction value. eg. "a123.45".toInt() -&gt; NaN</td>
+					</tr>
+					<tr>
+						<td>.toInt(redix)</td>
+						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".toInt(16) -&gt; 44847</td>
+					</tr>
+					<tr>
+						<td>.toInt(redix,NaN_Value)</td>
+						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".toInt(10,0) -&gt; 0</td>
+					</tr>
+					<tr>
+						<td>.toInt(redix,itself)</td>
+						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".toInt(8,itself) -&gt; "AF2F"</td>
+					</tr>
+					<tr>
+						<td>.toFloat()</td>
+						<td>Convert string number to numeric value or NaN. eg. "123.45".toFloat() -&gt; 123.45</td>
+					</tr>
+					<tr>
+						<td>.toFloat()</td>
+						<td>Convert string number to numeric value or NaN. eg. "a123.45".toFloat() -&gt; NaN</td>
+					</tr>
+					<tr>
+						<td>.toFloat(NaN_Value)</td>
+						<td>Convert string number to numeric value. on fail return NaN_Value. eg. "a123.45".toFloat(0) -&gt; 0</td>
+					</tr>
+					<tr>
+						<td>.toFloat(itself)</td>
+						<td>Convert string number to numeric value. on fail return original string itself. eg. "a123.45".toFloat(itself) -&gt; "a123.45"</td>
+					</tr>
+					<tr>
+						<td>.isNaN()</td>
+						<td>Check wheter string can be convert to numeric or not. return true/false. eg. "1234.56".isNaN() -&gt; false</td>
+					</tr>
+					<tr>
+						<td>.isNaN()</td>
+						<td>Check wheter string can be convert to numeric or not. return true/false. eg. "a1234.56".isNaN() -&gt; true</td>
+					</tr>
+					<tr>
+						<td>.isNaN(NaN_Value)</td>
+						<td>Convert string to numeric value. eg. "1234.56".isNaN(0) -&gt; 1234.56</td>
+					</tr>
+					<tr>
+						<td>.isNaN(NaN_Value)</td>
+						<td>Convert string to numeric value. eg. "a1234.56".isNaN(0) -&gt; 0</td>
+					</tr>
+					<tr>
+						<td>.isNaN(itself)</td>
+						<td>Convert string to numeric value. eg. "a1234.56".isNaN(itself) -&gt; "a1234.56"</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</body>
 </html>

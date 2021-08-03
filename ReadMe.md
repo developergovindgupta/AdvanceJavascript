@@ -48,5 +48,6 @@
 |.isNaN(NaN_Value)| Convert string to numeric value. eg. "1234.56".isNaN(0) -> 1234.56|
 |.isNaN(NaN_Value)| Convert string to numeric value. eg. "a1234.56".isNaN(0) -> 0|
 |.isNaN(itself)| Convert string to numeric value. eg. "a1234.56".isNaN(itself) -> "a1234.56"|
+|.toArray()| Convert strint to characters array. eg. "abcd".toArray() -> ["a", "b", "c", "d"]|
 
 

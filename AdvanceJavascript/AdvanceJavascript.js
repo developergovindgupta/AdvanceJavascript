@@ -57,8 +57,18 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 
 	!String.prototype.toKebabCase &&
 		/**
-		 * This is string extension method that convert string to kebab case
-		 * @returns {string} string converted in kebab case
+		 * This is a string extension method convert string to kebab case. Input string may be space separated or pascal/camel/snake case
+		 * @returns {string} String converted to kebab case
+		 * ---
+		 * @example
+		 * > "this is sample string".toKebabCase()
+		 * //OUTPUT : "this-is-sample-string"
+		 * > "thisIsSampleString".toKebabCase()
+		 * //OUTPUT : "this-is-sample-string"
+		 * > "ThisIsSampleString".toKebabCase()
+		 * //OUTPUT : "this-is-sample-string"
+		 * > "this_is_sample_string".toKebabCase()
+		 * //OUTPUT : "this-is-sample-string"
 		 */
 		(String.prototype.toKebabCase = function toKebabCase() {
 			let str = this.trimAll();
@@ -88,7 +98,21 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return str2;
 		});
 	!String.prototype.toPascalCase &&
-		(String.prototype.toPascalCase = function () {
+		/**
+		 * This is a string extension method convert string to pascal case. Input string may be space separated or camel/snake/kebab case
+		 * @returns {string} String converted to pascal case
+		 * ---
+		 * @example
+		 * > "this is sample string".toPascalCase()
+		 * //OUTPUT : "ThisIsSampleString"
+		 * > "thisIsSampleString".toPascalCase()
+		 * //OUTPUT : "ThisIsSampleString"
+		 * > "this-is-sample-string".toPascalCase()
+		 * //OUTPUT : "ThisIsSampleString"
+		 * > "this_is_sample_string".toPascalCase()
+		 * //OUTPUT : "ThisIsSampleString"
+		 */
+		(String.prototype.toPascalCase = function toPascalCase() {
 			let str = this.trimAll();
 			let str2 = '';
 			let isSpace = false;
@@ -110,7 +134,21 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return str2;
 		});
 	!String.prototype.toSnakeCase &&
-		(String.prototype.toSnakeCase = function () {
+		/**
+		 * This is a string extension method convert string to snake case. Input string may be space separated or camel/pascal/kebab case
+		 * @returns {string} String converted to snake case
+		 * ---
+		 * @example
+		 * > "this is sample string".toSnakeCase()
+		 * //OUTPUT : "this_is_sample_string"
+		 * > "thisIsSampleString".toSnakeCase()
+		 * //OUTPUT : "this_is_sample_string"
+		 * > "this-is-sample-string".toSnakeCase()
+		 * //OUTPUT : "this_is_sample_string"
+		 * > "ThisIsSampleString".toSnakeCase()
+		 * //OUTPUT : "this_is_sample_string"
+		 */
+		(String.prototype.toSnakeCase = function toSnakeCase() {
 			let str = this.trimAll();
 			let str2 = '';
 			let isSpace = false;
@@ -138,49 +176,149 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return str2;
 		});
 	!String.prototype.left &&
-		(String.prototype.left = function (n) {
+		/**
+		 * Extract given number of characters from left.
+		 *
+		 * @param {number} n Number of characters
+		 * @returns {string} First n characters from string
+		 * ---
+		 * @example
+		 * > "this is sample string".left(6)
+		 * //OUTPUT : "this i"
+		 */
+		(String.prototype.left = function left(n) {
 			n = n || 1;
 			return this.substr(0, n);
 		});
 	!String.prototype.right &&
-		(String.prototype.right = function (n) {
+		/**
+		 * Extract given number of characters from right.
+		 *
+		 * @param {number} n Number of characters
+		 * @returns {string} Last n characters from string
+		 * ---
+		 * @example
+		 * > "this is sample string".right(4)
+		 * //OUTPUT : "ring"
+		 */
+		(String.prototype.right = function right(n) {
 			n = n || 1;
 			return this.substring(this.length - n);
 		});
 	!String.prototype.mid &&
-		(String.prototype.mid = function (m, n) {
+		/**
+		 *Extract given number of characters (n) from given index value (m).
+		 *
+		 * if n is not passed then only one character extract
+		 *
+		 * if m is not passed then one character extract from mid of string.
+		 *
+		 * ---
+		 *
+		 * @param {number} m Start index from (n) number of characters extract
+		 * @param {number} n Number of characters.
+		 * @returns {string} returns n characters from given index point within the string
+		 * ---
+		 * @example
+		 * > "this is sample string".mid(8,6)
+		 * //OUTPUT : "sample"
+		 * > "this is sample string".mid(8)
+		 * //OUTPUT : "s"
+		 * > "this is sample string".mid()
+		 * //OUTPUT : "m"
+		 */
+		(String.prototype.mid = function mid(m, n) {
 			m = m || Math.floor(this.length / 2);
 			n = n || 1;
 			return this.substr(m, n);
 		});
 	!String.prototype.reverse &&
-		(String.prototype.reverse = function () {
+		/**
+		 * This extension method reverse the string
+		 *
+		 * @returns {string} retern string in reverse order
+		 * @example
+		 * > "this is sample string".reverse()
+		 * //OUTPUT : "gnirts elpmas si siht"
+		 */
+		(String.prototype.reverse = function reverse() {
 			return this.split('').reverse().join('');
 		});
 	!String.prototype.sort &&
-		(String.prototype.sort = function (compareFn) {
+		/**
+		 * Sort string in ascending order or depends on compare function if passed
+		 * @param {function} compareFn optional parameter a function that compare tow values and retrun positive or negative value
+		 *
+		 * @returns {string} Sorted string alphabatical order
+		 * @example
+		 * > "this is sample string".sort()
+		 * //OUTPUT : "   aeghiiilmnprsssstt"
+		 * > "this is sample string".sort((a, b) => (a < b ? 1 : -1))
+		 * //OUTPUT : "ttssssrpnmliiihgea   "
+		 */
+		(String.prototype.sort = function sort(compareFn) {
 			return this.split('')
 				.sort(compareFn || ((a, b) => (a > b ? 1 : -1)))
 				.join('');
 		});
 	!String.prototype.sortAsc &&
-		(String.prototype.sortAsc = function (compareFn) {
+		/**
+		 * Sort string in ascending order
+		 * @returns {string} Sorted string alphabatical order
+		 * @example
+		 * > "this is sample string".sortAsc()
+		 * //OUTPUT : "   aeghiiilmnprsssstt"
+		 */
+		(String.prototype.sortAsc = function sortAsc() {
 			return this.split('')
-				.sort(compareFn || ((a, b) => (a > b ? 1 : -1)))
+				.sort((a, b) => (a > b ? 1 : -1))
 				.join('');
 		});
 	!String.prototype.sortDesc &&
-		(String.prototype.sortDesc = function (compareFn) {
+		/**
+		 * Sort string in descending order
+		 * @returns {string} Sorted string alphabatical order
+		 * @example
+		 * > "this is sample string".sortDesc()
+		 * //OUTPUT : "ttssssrpnmliiihgea   "
+		 */
+		(String.prototype.sortDesc = function sortDesc() {
 			return this.split('')
-				.sort(compareFn || ((a, b) => (a < b ? 1 : -1)))
+				.sort((a, b) => (a < b ? 1 : -1))
 				.join('');
 		});
 	!String.prototype.distinct &&
-		(String.prototype.distinct = function (compareFn) {
+		/**
+		 * Extract distinct/unique characters from string
+		 * @returns {string} String having distinct unique characters.
+		 * @example
+		 * > "this is sample string".distinct()
+		 * //OUTPUT : "this amplerng"
+		 * // you can sort it by using .sort method
+		 */
+		(String.prototype.distinct = function distinct() {
 			return Array.from(new Set(this.split(''))).join('');
 		});
+
 	!String.prototype.toNumber &&
-		(String.prototype.toNumber = function (nanValue) {
+		/**
+		 * Convert string to numeric value if fails it return NaN or value you passed as parameter
+		 *
+		 * an special parameter value *itself* that return string itself if NaN result
+		 * @param {number|itself} [nanValue] Optional parameter if passed then in case of NaN return it
+		 *
+		 * @returns {number} Numeric/NaN  or passed nanValue
+		 * @example
+		 * > "123.45".toNumber()
+		 * //OUTPUT : 123.45
+		 * > "a123.45".toNumber()
+		 * //OUTPUT : NaN
+		 * > "a123.45".toNumber(0)
+		 * //OUTPUT : 0
+		 * > "a123.45".toNumber(itself)
+		 * //OUTPUT : "a123.45"
+		 */
+		(String.prototype.toNumber = function toNumber(nanValue) {
 			let num = parseFloat(this.replace(/,/g, '').trimAll());
 			if (isNaN(num)) {
 				if (nanValue === _window.itself) {
@@ -191,8 +329,25 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return num;
 		});
 	!String.prototype.parseInt &&
-		(String.prototype.parseInt = function (baseValue, nanValue) {
-			let num = parseInt(this.replace(/,/g, '').trimAll(), baseValue);
+		/**
+		 * Convert string to integer value if fails it return NaN or value you passed as parameter
+		 *
+		 * an special parameter value *itself* that return string itself if NaN result
+		 * @param {number} [radix] Optional base value that defines the string value 2,8,10,16 [binary,octal,decima,hexa]
+		 * @param {number|itself} [nanValue] Optional parameter if passed then in case of NaN return it
+		 * @returns {integer} Numeric/NaN  or passed nanValue
+		 * @example
+		 * > "123.45".parseInt()
+		 * //OUTPUT : 123
+		 * > "a123.45".parseInt()
+		 * //OUTPUT : NaN
+		 * > "a123.45".parseInt(0)
+		 * //OUTPUT : 0
+		 * > "a123.45".parseInt(itself)
+		 * //OUTPUT : "a123.45"
+		 */
+		(String.prototype.parseInt = function (radix, nanValue) {
+			let num = parseInt(this.replace(/,/g, '').trimAll(), radix);
 			if (isNaN(num)) {
 				if (nanValue === _window.itself) {
 					return this;
@@ -202,7 +357,35 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return num;
 		});
 	!String.prototype.parseFloat && (String.prototype.parseFloat = String.prototype.toNumber);
-	!String.prototype.toInt && (String.prototype.toInt = String.prototype.parseInt);
+
+	!String.prototype.toInt &&
+		/**
+		 * Convert string to integer value if fails it return NaN or value you passed as parameter
+		 *
+		 * an special parameter value *itself* that return string itself if NaN result
+		 * @param {number} [radix] Optional base value that defines the string value 2,8,10,16 [binary,octal,decima,hexa]
+		 * @param {number|itself} [nanValue] Optional parameter if passed then in case of NaN return it
+		 * @returns {integer} Numeric/NaN  or passed nanValue
+		 * @example
+		 * > "123.45".toInt()
+		 * //OUTPUT : 123
+		 * > "a123.45".toInt()
+		 * //OUTPUT : NaN
+		 * > "a123.45".toInt(0)
+		 * //OUTPUT : 0
+		 * > "a123.45".toInt(itself)
+		 * //OUTPUT : "a123.45"
+		 */
+		(String.prototype.toInt = function toInt(radix, nanValue) {
+			let num = parseInt(this.replace(/,/g, '').trimAll(), radix);
+			if (isNaN(num)) {
+				if (nanValue === _window.itself) {
+					return this;
+				}
+				return (num = nanValue ?? num);
+			}
+			return num;
+		});
 	!String.prototype.toFloat && (String.prototype.toFloat = String.prototype.toNumber);
 	!String.prototype.isNaN &&
 		(String.prototype.isNaN = function (nanValue) {
@@ -218,11 +401,25 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 		});
 
 	!String.prototype.toArray &&
-		(String.prototype.toArray = function () {
+		/**
+		 * Convert string to characters array
+		 * @returns {array} characters array
+		 * @example
+		 * > "abcde".toArray()
+		 * //OUTPUT : [a,b,c,d,e]
+		 */
+		(String.prototype.toArray = function toArray() {
 			return this.split('');
 		});
 	!String.prototype.toCodeArray &&
-		(String.prototype.toCodeArray = function () {
+		/**
+		 * Convert string to array of character ascii/unicode code
+		 * @returns {[number]} ascii/unicode code array
+		 * @example
+		 * > "abcde".toCodeArray()
+		 * //OUTPUT : [97, 98, 99, 100, 101]
+		 */
+		(String.prototype.toCodeArray = function toCodeArray() {
 			let arr = [];
 			for (let i = 0, j = this.length; i < j; i++) {
 				arr.push(this.charCodeAt(i));
@@ -230,7 +427,14 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return arr;
 		});
 	!String.prototype.toCharCodeArray &&
-		(String.prototype.toCharCodeArray = function () {
+		/**
+		 * Convert string to array of object {char:'char',code:number}
+		 * @returns {[{char,code}]} ascii/unicode code array
+		 * @example
+		 * > "abcde".toCharCodeArray()
+		 * //OUTPUT : [{char: "a", code: 97},{char: "b", code: 98},{char: "c", code: 99},{char: "d", code: 100},{char: "e", code: 101}]
+		 */
+		(String.prototype.toCharCodeArray = function toCharCodeArray() {
 			let arr = [];
 			for (let i = 0, j = this.length; i < j; i++) {
 				arr.push({ char: this[i], code: this.charCodeAt(i) });
@@ -238,7 +442,14 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return arr;
 		});
 	!String.prototype.toCharCode &&
-		(String.prototype.toCharCode = function () {
+		/**
+		 * Convert string to object {char:code,char:code}
+		 * @return {Object} {char:code,char:code}
+		 * @example
+		 * > "abcd".toCharCode()
+		 * //OUTPUT : {a: 97, b: 98, c: 99, d: 100}
+		 */
+		(String.prototype.toCharCode = function toCharCode() {
 			let obj = {};
 			for (let i = 0, j = this.length; i < j; i++) {
 				!obj[this[i]] && (obj[this[i]] = this.charCodeAt(i));
@@ -246,15 +457,32 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return obj;
 		});
 	!String.prototype.frequency &&
-		(String.prototype.frequency = function (char, insensitive) {
+		/**
+		 * Calculate frequency of charactes in string and return object having character as key and frequency as value
+		 * @param {string}[char] Optional if character is passed then return frequency of char in string
+		 * @param {boolean}[isInSensitive] Optional if true then it matches without case check
+		 * @returns {Object} {char:frequency} Object or Nemeric value if char passed
+		 * @example
+		 * > "this is a sample string".frequency()
+		 * //OUTPUT : {" ": 4,a: 2,e: 1,g: 1,h: 1,i: 3,l: 1,m: 1,n: 1,p: 1,r: 1,s: 4,t: 2}
+		 * > "thisIsASampleString".frequency()
+		 * //OUTPUT : {A: 1,I: 1,S: 2,a: 1,e: 1,g: 1,h: 1,i: 2,l: 1,m: 1,n: 1,p: 1,r: 1,s: 2,t: 2}
+		 * > "thisIsASampleString".frequency(true)
+		 * //OUTPUT : {a: 2,e: 1,g: 1,h: 1,i: 3,l: 1,m: 1,n: 1,p: 1,r: 1,s: 4,t: 2}
+		 * > "thisIsASampleString".frequency('i')
+		 * //OUTPUT : 2
+		 * > "thisIsASampleString".frequency('i',true)
+		 * //OUTPUT : 3
+		 */
+		(String.prototype.frequency = function frequency(char, isInSensitive) {
 			if (typeof char === 'boolean') {
-				insensitive = char;
+				isInSensitive = char;
 				char = '';
 			}
 			let str = this;
-			if (insensitive) {
+			if (isInSensitive) {
 				str = this.toLowerCase();
-				char && (char = char.toLowerCase());
+				char && (char = char[0].toLowerCase());
 			}
 			if (char) {
 				let count = 0;
@@ -273,7 +501,33 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			}
 		});
 	!String.prototype.toDateTime &&
-		(String.prototype.toDateTime = function () {
+		/**
+		 * Convert string to Date value
+		 *
+		 * Input string must be a valid date format. if invalid date then it return "1/JAN/1900"
+		 * @returns {Date} Date Object that can be processed as Date Computation and methods
+		 * @example
+		 * > "1-jan-2021".toDateTime()
+		 * //OUTPUT : Fri Jan 01 2021 00:00:00 GMT+0530 (India Standard Time)
+		 * > "1-Mar".toDateTime()
+		 * //OUTPUT : Mon Mar 01 2021 00:00:00 GMT+0530 (India Standard Time)
+		 * > "Mar,2022".toDateTime()
+		 * //OUTPUT : Tue Mar 01 2022 00:00:00 GMT+0530 (India Standard Time)
+		 * > "2021".toDateTime()
+		 * //OUTPUT : Fri Jan 01 2021 05:30:00 GMT+0530 (India Standard Time)
+		 * > "1/5/2021".toDateTime()
+		 * //OUTPUT : Sat May 01 2021 00:00:00 GMT+0530 (India Standard Time)
+		 * > "01/05/2021 5:55 AM".toDateTime()
+		 * //OUTPUT : Sat May 01 2021 05:55:00 GMT+0530 (India Standard Time)
+		 * > "01/08/2021 5:15:16 PM".toDateTime()
+		 * //OUTPUT : Sun Aug 01 2021 17:15:16 GMT+0530 (India Standard Time)
+		 * > "12:15:16 AM".toDateTime()
+		 * //OUTPUT : Thu Aug 05 2021 00:15:16 GMT+0530 (India Standard Time)
+		 * //current date with given time
+		 * > "invalid date string".toDateTime()
+		 * //OUTPUT : Mon Jan 01 1900 00:00:00 GMT+0521 (India Standard Time)
+		 */
+		(String.prototype.toDateTime = function toDateTime() {
 			let mmm = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
 			let d = new Date();
 			let dt = { dd: 1, mm: 1, yy: 1900, h: 0, m: 0, s: 0 };
@@ -546,7 +800,14 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return d;
 		});
 	!String.prototype.toDate &&
-		(String.prototype.toDate = function () {
+		/**
+		 * Convert String to only Date value exclude time value
+		 * @returns {Date} Date Object that can be processed as Date Computation and methods
+		 * @example
+		 * > "05-Aug-2021 05:25:15 AM".toDate()
+		 * //OUTPUT : Thu Aug 05 2021 00:00:00 GMT+0530 (India Standard Time)
+		 */
+		(String.prototype.toDate = function toDate() {
 			return this.toDateTime().format('dd/MMM/yyyy').toDateTime();
 		});
 
@@ -562,11 +823,29 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			}
 		});
 	!Number.prototype.toChar &&
-		(Number.prototype.toChar = function () {
+		/**
+		 * Convert Number to Character.
+		 * @returns {string} ASCII/UNICODE to CHAR
+		 */
+		(Number.prototype.toChar = function toChar() {
 			return String.fromCharCode(this);
 		});
 	!Number.prototype.format &&
-		(Number.prototype.format = function (strFormat) {
+		/**
+		 * Conert Numeric Value to string with format string.
+		 * @param {string} strFormat "#" or "0" for Numeric Value and "," for separator
+		 * @returns {string} Formatted String Value
+		 * @example
+		 * > (1234567890).format("#,##,##0.00")
+		 * //OUTPUT : "1,23,45,67,890.00"
+		 * > (123).format("#,##,##0.00")
+		 * //OUTPUT : "123.00"
+		 * > (123).format("0000000")
+		 * //OUTPUT : "0000123"
+		 * > (123412341234).format("####,####,####").replaceAll(',','-')
+		 * //OUTPUT : "1234-1234-1234"
+		 */
+		(Number.prototype.format = function format(strFormat) {
 			if (strFormat && typeof strFormat === 'string' && /^([0#,])+([.]){0,1}([0])*$/.test(strFormat)) {
 				let str = this.toString();
 				if (str.indexOf('e') > 0) {
@@ -725,7 +1004,17 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			}
 		});
 	!Date.prototype.addDays &&
-		(Date.prototype.addDays = function (num) {
+		/**
+		 * This is Date extension method that adds number of days in Date value
+		 * @param {number} num Enter how many days you want to add/subtract
+		 * @returns {date} new date value
+		 * @example
+		 * > '1 jan 2022'.toDateTime().addDays(10)
+		 * //OUTPUT : Tue Jan 11 2022 00:00:00 GMT+0530 (India Standard Time)
+		 * > '1 jan 2022'.toDateTime().addDays(-10)
+		 * //OUTPUT : Wed Dec 22 2021 00:00:00 GMT+0530 (India Standard Time)
+		 */
+		(Date.prototype.addDays = function addDays(num) {
 			let d = new Date(this);
 			if (num) {
 				d.setDate(this.getDate() + num);
@@ -733,7 +1022,17 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return d;
 		});
 	!Date.prototype.addMonths &&
-		(Date.prototype.addMonths = function (num) {
+		/**
+		 * This is Date extension method that adds number of months in Date value
+		 * @param {number} num Enter how many months you want to add/subtract
+		 * @returns {date} new date value
+		 * @example
+		 * > '1 jan 2022'.toDateTime().addMonths(10)
+		 * //OUTPUT : Tue Nov 01 2022 00:00:00 GMT+0530 (India Standard Time)
+		 * > '1 jan 2022'.toDateTime().addMonths(-10)
+		 * //OUTPUT : Mon Mar 01 2021 00:00:00 GMT+0530 (India Standard Time)
+		 */
+		(Date.prototype.addMonths = function addMonths(num) {
 			let d = new Date(this);
 			if (num) {
 				d.setMonth(this.getMonth() + num);
@@ -741,7 +1040,17 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return d;
 		});
 	!Date.prototype.addYears &&
-		(Date.prototype.addYears = function (num) {
+		/**
+		 * This is Date extension method that adds number of years in Date value
+		 * @param {number} num Enter how many years you want to add/subtract
+		 * @returns {date} new date value
+		 * @example
+		 * > '1 jan 2022'.toDateTime().addYears(10)
+		 * //OUTPUT : Thu Jan 01 2032 00:00:00 GMT+0530 (India Standard Time)
+		 * > '1 jan 2022'.toDateTime().addYears(-10)
+		 * //OUTPUT : Sun Jan 01 2012 00:00:00 GMT+0530 (India Standard Time)
+		 */
+		(Date.prototype.addYears = function addYears(num) {
 			let d = new Date(this);
 			if (num) {
 				d.setFullYear(this.getFullYear() + num);
@@ -749,7 +1058,17 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return d;
 		});
 	!Date.prototype.addHours &&
-		(Date.prototype.addHours = function (num) {
+		/**
+		 * This is Date extension method that adds number of hours in Date value
+		 * @param {number} num Enter how many hours you want to add/subtract
+		 * @returns {date} new date value
+		 * @example
+		 * > '1 jan 2022 08:12:18 AM'.toDateTime().addHours(10)
+		 * //OUTPUT : Sat Jan 01 2022 18:12:18 GMT+0530 (India Standard Time)
+		 * > '1 jan 2022 08:12:18 AM'.toDateTime().addHours(-10)
+		 * //OUTPUT : Fri Dec 31 2021 22:12:18 GMT+0530 (India Standard Time)
+		 */
+		(Date.prototype.addHours = function addHours(num) {
 			let d = new Date(this);
 			if (num) {
 				d.setHours(this.getHours() + num);
@@ -757,7 +1076,17 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return d;
 		});
 	!Date.prototype.addMinutes &&
-		(Date.prototype.addMinutes = function (num) {
+		/**
+		 * This is Date extension method that adds number of minutes in Date value
+		 * @param {number} num Enter how many minutes you want to add/subtract
+		 * @returns {date} new date value
+		 * @example
+		 * > '1 jan 2022 08:12:18 AM'.toDateTime().addMinutes(10)
+		 * //OUTPUT : Sat Jan 01 2022 08:22:18 GMT+0530 (India Standard Time)
+		 * > '1 jan 2022 08:12:18 AM'.toDateTime().addMinutes(-10)
+		 * //OUTPUT : Sat Jan 01 2022 08:02:18 GMT+0530 (India Standard Time)
+		 */
+		(Date.prototype.addMinutes = function addMinutes(num) {
 			let d = new Date(this);
 			if (num) {
 				d.setMinutes(this.getMinutes() + num);
@@ -765,15 +1094,39 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return d;
 		});
 	!Date.prototype.addSeconds &&
-		(Date.prototype.addSeconds = function (num) {
+		/**
+		 * This is Date extension method that adds number of seconds in Date value
+		 * @param {number} num Enter how many seconds you want to add/subtract
+		 * @returns {date} new date value
+		 * @example
+		 * > '1 jan 2022 08:12:18 AM'.toDateTime().addSeconds(10)
+		 * //OUTPUT : Sat Jan 01 2022 08:12:28 GMT+0530 (India Standard Time)
+		 * > '1 jan 2022 08:12:18 AM'.toDateTime().addSeconds(-10)
+		 * //OUTPUT : Sat Jan 01 2022 08:12:08 GMT+0530 (India Standard Time)
+		 */
+		(Date.prototype.addSeconds = function addSeconds(num) {
 			let d = new Date(this);
 			if (num) {
 				d.setSeconds(this.getSeconds() + num);
 			}
 			return d;
 		});
-	!Date.prototype.diff &&
-		(Date.prototype.diff = function (date) {
+	!Date.prototype.dateDiff &&
+		/**
+		 * This is Date extension method that subtract given date and return difference in days
+		 * @param {date} date Enter Subtract Date
+		 * @returns {number} Difference in Days
+		 * @example
+		 * > let a = '1 jan 2022'.toDateTime()
+		 * > let b = '1 jan 2020'.toDateTime()
+		 * > a.dateDiff(b)
+		 * //OUTPUT : -731
+		 * > let a = '1 jan 2022 10:20 AM'.toDateTime()
+		 * > let b = '1 jan 2025 10:20 PM'.toDateTime()
+		 * > a.dateDiff(b)
+		 * //OUTPUT : 1096.5
+		 */
+		(Date.prototype.dateDiff = function dateDiff(date) {
 			date = date || new Date();
 			if (date.isDate) {
 				let diff = date - this;
@@ -782,24 +1135,64 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			return 0;
 		});
 	!Array.prototype.toSet &&
-		(Array.prototype.toSet = function () {
+		/**
+		 * This Array extension method convert array to set of unique values
+		 * @returns {Set} new Set([]) value
+		 * @example
+		 * > [1,2,5,8,5,4,5,2,4,3].toSet()
+		 * //OUTPUT : Set(6) {1, 2, 5, 8, 4, 3}
+		 */
+		(Array.prototype.toSet = function toSet() {
 			return new Set(this);
 		});
 	!Array.prototype.contains &&
-		(Array.prototype.contains = function (val) {
+		/**
+		 * This Array extension method searches value in array and return boolean true/false
+		 *
+		 * @param {Object} val Any value that you want to search in array.
+		 * @returns {boolean} if value found in array with exact matches. eg. object with same properties and value.
+		 * @example
+		 * > [1,'a','2.5',2.6,{a:false},{a:1,b:2}].contains('a')
+		 * //OUTPUT : true
+		 * > [1,'a','2.5',2.6,{a:false},{a:1,b:2}].contains('b')
+		 * //OUTPUT : false
+		 * > [1,'a','2.5',2.6,{a:false},{a:1,b:2}].contains(2.5)
+		 * //OUTPUT : false
+		 * > [1,'a','2.5',2.6,{a:false},{a:1,b:2}].contains('2.5')
+		 * //OUTPUT : true
+		 * > [1,'a','2.5',2.6,{a:false},{a:1,b:2}].contains({a:1})
+		 * //OUTPUT : false
+		 * > [1,'a','2.5',2.6,{a:false},{a:1,b:2}].contains({b:2,a:1})
+		 * //OUTPUT : true
+		 */
+		(Array.prototype.contains = function contains(val) {
 			for (let i = 0, j = this.length; i < j; i++) {
-				if (this[i] === val) {
+				let x = this[i];
+				if (x === val) {
 					return true;
-				} else if (!this[i].equals) {
+				} else if (x.isNumber || x.isString || x.isDate || !x.equals) {
 					continue;
-				} else if (this[i].equals(val)) {
+				} else if (x.equals(val)) {
 					return true;
 				}
 			}
 			return false;
 		});
-	!Array.prototype.distinct &&
-		(Array.prototype.distinct = function () {
+	!Array.prototype.unique &&
+		/**
+		 * This array extension method return new array having distinct/unique values
+		 *
+		 * this compare array value deep search and check equality for finding unique value
+		 *
+		 * note : it not clone the array so both array reference is same object.
+		 * @returns {array} return new array with unique values reference
+		 * @example
+		 * > [1,2,5,4,1,2,5,8,2,5].unique()
+		 * //OUTPUT : [1, 2, 5, 4, 8]
+		 * > [{a:true,b:false},{a:true,b:false},{a:false,b:false},{a:true,b:false}].unique()
+		 * //OUTPUT : [{a:true,b:false},{a:false,b:false}]
+		 */
+		(Array.prototype.unique = function unique() {
 			let arr = [];
 			for (let i = 0, j = this.length; i < j; i++) {
 				if (!arr.contains(this[i])) {
@@ -808,19 +1201,52 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			}
 			return arr;
 		});
+	!Array.prototype.distinct && (Array.prototype.distinct = Array.prototype.unique);
 	!Set.prototype.toArray &&
-		(Set.prototype.toArray = function () {
+		/**
+		 * This Set extension method that convert set to Array.
+		 * @returns {Array} Array.from(Set)
+		 * @example
+		 * > [1,2,3,1,5,4,2,3].toSet().toArray()
+		 * //OUTPUT :[1, 2, 3, 5, 4]
+		 */
+		(Set.prototype.toArray = function toArray() {
 			return Array.from(this);
 		});
 	!Object.prototype.clone &&
-		(Object.prototype.clone = function () {
-			return JSON.parse(JSON.stringify(this));
+		/**
+		 * This extension method make clone of any object/array
+		 * @returns {object} return new object/array
+		 * @example
+		 * > let obj = {a:true,b:44,c:[1,2,3]};
+		 * > obj.clone();
+		 * //OUTPUT :{a: true, b: 44, c:[1,2,3]}
+		 */
+		(Object.prototype.clone = function clone() {
+			let a = JSON.stringify(this);
+			return JSON.parse(a);
 		});
 	!Object.prototype.equals &&
-		(Object.prototype.equals = function (obj2) {
+		/**
+		 * This extension method checks for equality of object in deep.
+		 * @param {object} obj2 second object to compare
+		 * @returns {boolean} true/false
+		 * @example
+		 * > let obj1 = {a:true,b:44,c:[1,2,3]};
+		 * > let obj2 = {a:true,b:44,c:[1,2,3]};
+		 * > obj1.equals(obj2)
+		 * //OUTPUT : true
+		 * > let obj1 = {a:true,b:44,c:[1,2,3,4]};
+		 * > let obj2 = {a:true,b:44,c:[1,2,3]};
+		 * > obj1.equals(obj2)
+		 * //OUTPUT : false
+		 */
+		(Object.prototype.equals = function equals(obj2) {
 			let obj1 = this;
 			if (obj1 === obj2) {
 				return true;
+			} else if (obj1.isNumber || obj1.isString || obj1.isDate) {
+				return false;
 			} else {
 				if (!obj2) {
 					return false;
@@ -873,12 +1299,16 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 	!String.prototype.isString && (String.prototype.isString = true);
 	!Date.prototype.isDate && (Date.prototype.isDate = true);
 	!Array.prototype.isArray && (Array.prototype.isArray = true);
+	!Number.prototype.isNumber && (Number.prototype.isNumber = true);
 	Object.defineProperty(String.prototype, 'isNumber', {
 		get: function () {
 			let regExp = /(^[\d,]*\d[.]{0,1}\d*$|^[.]\d+$)/;
 			return regExp.test(this);
 		},
 	});
+	/**
+	 * @typedef itself an special keyword that return processed string if fail to convert string to number and NaN result generate
+	 */
 	_window.itself = { description: 'itself : keyword is reserved by AdvanceJavascript' };
 	console.info('AdvanceJavascript is initiated and now your javascript is become advanced. use advance javascript feature and write code very handy.');
 })(global);

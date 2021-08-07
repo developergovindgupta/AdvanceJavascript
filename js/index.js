@@ -1,4 +1,28 @@
-require('../AdvanceJavascript/AdvanceJavascript.js');
-console.log('Advance Javascript Demo on Node.js');
-console.log('1 jan 2021'.toDateTime().format('dddd dd-MMM-yyyy hh:mm:ss:fff tt'));
-console.log(new Date().format('dddd dd-MMM-yyyy hh:mm:ss:fff tt'));
+require('../AdvanceJavascript/AdvanceJavascript.min.js');
+console.log(`
+
+╔═════════════════════════════════════════════════════════════════════════╗
+║                     ADVANCE JAVASCRIPT                                  ║
+║  *collection of prototype extension methods that make js coding handy*  ║
+╟─────────────────────────────────────────────────────────────────────────╢
+║                                                                         ║
+║ CREATED BY : GOVIND PRASAD GUPTA                                        ║
+║                                                                         ║
+║ GIT LINK : https://github.com/developergovindgupta/AdvanceJavascript    ║
+║                                                                         ║
+║ NPM LINK : https://www.npmjs.com/settings/developergovindgupta/packages ║
+║                                                                         ║
+║           npm i advance-javascript                                      ║
+║                                                                         ║
+╟─────────────────────────────────────────────────────────────────────────╢
+║  FILES : AdvanceJavascript.js                                           ║
+║          AdvanceJavascript.min.js                                       ║
+╟─────────────────────────────────────────────────────────────────────────╢
+║  USASE :                                                                ║
+║         NODE-JS :  require('advance-javascript');                       ║
+║    WEB .JS FILE : import 'advance-javascript';                          ║
+║       HTML FILE : <script src="./js/AdvanceJavascript.js"></script>     ║
+║                                                                         ║
+╚═════════════════════════════════════════════════════════════════════════╝
+
+`);

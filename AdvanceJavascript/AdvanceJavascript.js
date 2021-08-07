@@ -1,3 +1,31 @@
+/*
+
+╔═════════════════════════════════════════════════════════════════════════╗
+║                     ADVANCE JAVASCRIPT                                  ║
+║  *collection of prototype extension methods that make js coding handy*  ║
+╟─────────────────────────────────────────────────────────────────────────╢
+║                                                                         ║
+║ CREATED BY : GOVIND PRASAD GUPTA                                        ║
+║                                                                         ║
+║ GIT LINK : https://github.com/developergovindgupta/AdvanceJavascript    ║
+║                                                                         ║
+║ NPM LINK : https://www.npmjs.com/settings/developergovindgupta/packages ║
+║                                                                         ║
+║           npm i advance-javascript                                      ║
+║                                                                         ║
+╟─────────────────────────────────────────────────────────────────────────╢
+║  FILES : AdvanceJavascript.js                                           ║
+║          AdvanceJavascript.min.js                                       ║
+╟─────────────────────────────────────────────────────────────────────────╢
+║  USASE :                                                                ║
+║         NODE-JS :  require('advance-javascript');                       ║
+║    WEB .JS FILE : import 'advance-javascript';                          ║
+║       HTML FILE : <script src="./js/AdvanceJavascript.js"></script>     ║
+║                                                                         ║
+╚═════════════════════════════════════════════════════════════════════════╝
+
+*/
+
 var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {};
 (function (_window) {
 	!String.prototype.trimAll &&
@@ -324,7 +352,7 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 				if (nanValue === _window.itself) {
 					return this;
 				}
-				return (num = nanValue ?? num);
+				return (num = nanValue === undefined || nanValue === null ? num : nanValue);
 			}
 			return num;
 		});
@@ -352,7 +380,7 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 				if (nanValue === _window.itself) {
 					return this;
 				}
-				return (num = nanValue ?? num);
+				return (num = nanValue === undefined || nanValue === null ? num : nanValue);
 			}
 			return num;
 		});
@@ -382,7 +410,7 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 				if (nanValue === _window.itself) {
 					return this;
 				}
-				return (num = nanValue ?? num);
+				return (num = nanValue === undefined || nanValue === null ? num : nanValue);
 			}
 			return num;
 		});
@@ -394,7 +422,7 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 				if (nanValue === _window.itself) {
 					return this;
 				}
-				return nanValue ?? true;
+				return nanValue === undefined || nanValue === null ? true : nanValue;
 			} else {
 				return typeof nanValue === 'undefined' ? false : this.toNumber(nanValue);
 			}
@@ -817,7 +845,7 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 				if (nanValue === _window.itself) {
 					return this;
 				}
-				return nanValue ?? true;
+				return nanValue === undefined || nanValue === null ? true : nanValue;
 			} else {
 				return false;
 			}
@@ -1310,5 +1338,5 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 	 * @typedef itself an special keyword that return processed string if fail to convert string to number and NaN result generate
 	 */
 	_window.itself = { description: 'itself : keyword is reserved by AdvanceJavascript' };
-	console.info('AdvanceJavascript is initiated and now your javascript is become advanced. use advance javascript feature and write code very handy.');
+	console.info('%cAdvanceJavascript is initiated %cNow your javascript is become advanced. %cUse advance javascript feature and write code very handy. %cReadeMe:https://github.com/developergovindgupta/AdvanceJavascript', 'font-size:18px;color:blue;', 'font-size:14px;font-weight:bold;', 'font-size:12px;color:green;', 'font-size:12px;color:blue;');
 })(global);

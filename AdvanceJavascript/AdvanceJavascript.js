@@ -418,13 +418,13 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 	!String.prototype.isNaN &&
 		(String.prototype.isNaN = function (nanValue) {
 			let num = this.toNumber();
-			if (isNaN(num)) {
+			if (isNaN(num) || num === Infinity) {
 				if (nanValue === _window.itself) {
 					return this;
 				}
 				return nanValue === undefined || nanValue === null ? true : nanValue;
 			} else {
-				return typeof nanValue === 'undefined' ? false : this.toNumber(nanValue);
+				return nanValue === undefined || nanValue === null ? false : num;
 			}
 		});
 
@@ -841,13 +841,13 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 
 	!Number.prototype.isNaN &&
 		(Number.prototype.isNaN = function (nanValue) {
-			if (isNaN(this)) {
+			if (isNaN(this) || this === Infinity) {
 				if (nanValue === _window.itself) {
 					return this;
 				}
 				return nanValue === undefined || nanValue === null ? true : nanValue;
 			} else {
-				return false;
+				return nanValue === undefined || nanValue === null ? false : this;
 			}
 		});
 	!Number.prototype.toChar &&
@@ -1162,6 +1162,10 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			}
 			return 0;
 		});
+	!Date.prototype.toNumber &&
+		(Date.prototype.toNumber = function () {
+			return this.getTime();
+		});
 	!Array.prototype.toSet &&
 		/**
 		 * This Array extension method convert array to set of unique values
@@ -1251,6 +1255,9 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 		 * //OUTPUT :{a: true, b: 44, c:[1,2,3]}
 		 */
 		(Object.prototype.clone = function clone() {
+			if (this.isDate) {
+				return new Date(this);
+			}
 			let a = JSON.stringify(this);
 			return JSON.parse(a);
 		});
@@ -1282,8 +1289,12 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 				if (!obj2.equals) {
 					return false;
 				}
-				obj1 = obj1.clone();
-				obj2 = obj2.clone && obj2.clone();
+				try {
+					obj1 = obj1.clone();
+					obj2 = obj2.clone && obj2.clone();
+				} catch {
+					return false;
+				}
 				if (obj1.isArray && obj2.isArray) {
 					if (obj1.length === obj2.length) {
 						for (let i = 0, j = obj1.length; i < j; i++) {

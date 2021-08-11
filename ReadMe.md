@@ -117,4 +117,24 @@ copy following code and run on CLI
 |.addMinutes(*num*)|This is Date extension method that adds number of minutes in Date value<br>'1 jan 2022 08:12:18 AM'.toDateTime().addMinutes(10)<br>-> Sat Jan 01 2022 08:22:18 GMT+0530 (India Standard Time)<br>'1 jan 2022 08:12:18 AM'.toDateTime().addMinutes(-10)<br>-> Sat Jan 01 2022 08:02:18 GMT+0530 (India Standard Time) |
 |.addSeconds(*num*)| This is Date extension method that adds number of seconds in Date value<br>'1 jan 2022 08:12:18 AM'.toDateTime().addSeconds(10)<br>-> Sat Jan 01 2022 08:12:28 GMT+0530 (India Standard Time)<br>'1 jan 2022 08:12:18 AM'.toDateTime().addSeconds(-10)<br>->  Sat Jan 01 2022 08:12:08 GMT+0530 (India Standard Time)|
 |.dateDiff(*date*)| This is Date extension method that subtract given date and return difference in days<br> let a = '1 jan 2022'.toDateTime()<br>let b = '1 jan 2020'.toDateTime()<br>a.dateDiff(b)<br>->  -731 <br>let a = '1 jan 2022 10:20 AM'.toDateTime() <br>let b = '1 jan 2025 10:20 PM'.toDateTime()<br>a.dateDiff(b) <br>-> 1096.5|
-|.isDate|[boolean property] return **true** if a variable holds date value else **undefined**|
+|.toNumber()|Convert Date to Numeric value in milliseconds. eg. <br>'15 Aug 2021 8:30 AM'.toDateTime().toNumber();<br>-> 1628996400000|
+|**.isDate**|[boolean property] return **true** if a variable holds date value else **undefined**|
+
+
+
+## Number Prototype Extensions 
+
+|Number.methods|Description|
+|-|-|
+|.isNaN()|[boolean] return true or false if variable holds NaN value or Infinity then **true** else **false** eg. <br> let a = "45".toNumber();<br> a.isNaN();<br>-> false<br> let b = "a45".toNumber();<br> b.isNaN();<br>-> true|
+|.isNaN( *nanValue* )|check variable value if NaN or Infinity then nanValue else the numeric value itself. eg. <br> let a = "45".toNumber();<br> a.isNaN(0);<br>-> 45<br> let b = "a45".toNumber();<br> b.isNaN(0);<br>-> 0|
+|.isNaN( *itself* )|check variable value if NaN or Infinity then variable's value else the numeric value. eg. <br> let a = "45".toNumber();<br> a.isNaN(itself);<br>-> 45<br> let b = "a45".toNumber();<br> b.isNaN(itself);<br>-> NaN|
+|..toChar()|Convert Numeric value to character string according to their ASCII/UNICODE. eg.<br>(65).toChar();<br>-> 'A'<br>(9829).toChar();<br>-> "♥"<br>(9786).toChar();<br>-> "☺"|
+|.format( *strFormat* )|Convert numeric value to string with comma separated or with pad zero. depends of format string that is passed to it as argument.<br>Invalid format string then the number convert to string with local number format.<table><tr><th>Format Specifier</th><th>Description</th></tr><tr><td>#</td><td>Number or Blank</td></tr><tr><td>0</td><td>Number or Zero</td></tr><tr><td>,</td><td>Specify Comma Places</td></tr><tr><td>.</td><td>Decimal Position</td></tr></table><br>example:<table><tr><th>Example</th><th>Output</th></tr><tr><td>(12345679).format("#,##,##0.00")</td><td>"1,23,45,679.00"</td></tr><tr><td>(.123).format("#,##,##0.00")</td><td>"0.12"</td></tr><tr><td>(123).format("000000")</td><td>"000123"</td></tr><tr><td>(123412341234).format("####,####,####").replaceAll("," ,  "-")</td><td>"1234-1234-1234"</td></tr></table>|
+|.toDate()|Convert miliseconds numeric value to Date value. eg. <br> (1628996400000).toDate();<br>-> Sun Aug 15 2021 08:30:00 GMT+0530 (India Standard Time)|
+|**.isNumber**|[boolean property] return **true** if a variable holds numeric value else **undefined**|
+
+## Array Prototype Extensions 
+
+|Array.methods|Description|
+|-|-|

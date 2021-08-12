@@ -18,7 +18,7 @@ hr {
 }
 .content {
 	display: inline-block;
-	margin: 50px auto;
+	margin: auto;
 	padding: 10px;
 }
 table {
@@ -34,10 +34,4 @@ td {
 }
 tr:nth-child(even) td {
 	background-color: rgba(0, 0, 0, 0.1);
-}
-
-@media screen and (max-width: 800px) {
-	.content {
-		margin: auto;
-	}
 }

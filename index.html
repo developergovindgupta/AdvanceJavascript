@@ -13,8 +13,58 @@
 			<h3>a collection of javascript prototype extensions that make your javascript coding very easy and hanndy.</h3>
 			<h3>support both node.js and web browser</h3>
 			<br />
-			<hr />
 			<br />
+			<h1>How to use...</h1>
+			<p><a href="https://raw.githubusercontent.com/developergovindgupta/AdvanceJavascript/main/AdvanceJavascript/AdvanceJavascript.js" rel="nofollow">download: AdvanceJavascript.js</a></p>
+			<p><a href="https://raw.githubusercontent.com/developergovindgupta/AdvanceJavascript/main/AdvanceJavascript/AdvanceJavascript.min.js" rel="nofollow">download: AdvanceJavascript.min.js</a></p>
+			<p><a href="https://github.com/developergovindgupta/AdvanceJavascript">download: Source Code GitHub</a></p>
+			<p><a href="https://www.npmjs.com/package/advance-javascript" rel="nofollow">npm install advance-javascript</a></p>
+			<br />
+			<br />
+			<br />
+			<h2>How to Install</h2>
+			<p>copy following code and run on CLI</p>
+			<div class="snippet-clipboard-content position-relative">
+				<pre><code>npm install advance-javascript
+				</code></pre>
+			</div>
+			<h2>Include in your main.js/script.js/index.html page</h2>
+			<h3>it automaically initiated and extends JavaScript</h3>
+			<br />
+			<br />
+			<br />
+			<h3>NODE-JS :</h3>
+			<div class="snippet-clipboard-content position-relative">
+				<pre><code>require("advance-javascript");
+				</code></pre>
+			</div>
+			<br />
+			<br />
+			<h3>HTML</h3>
+			<div class="snippet-clipboard-content position-relative">
+				<pre>
+<code>import "advance-javascript";
+				
+or
+				
+&lt;script src="./js/AdvanceJavascript.js"&gt;&lt;/script&gt;
+				
+or
+				
+&lt;script src="./js/AdvanceJavascript.min.js"&gt;&lt;/script&gt;
+</code></pre>
+			</div>
+			<h3>after it you can use Advance Javascript Extension methods</h3>
+			<h1></h1>
+			<br />
+			<br />
+			<br />
+			<h1>Extension Methods</h1>
+			<h2>Extends String/Number/Date/Array/Set/Object</h2>
+			<br />
+			<br />
+			<br />
+
 			<h2>String Prototype Extensions</h2>
 			<table>
 				<thead>
@@ -30,166 +80,1206 @@
 					</tr>
 					<tr>
 						<td>.toCamelCase()</td>
-						<td>Convert sentence to camel case. eg. "this is normal string".toCamelCase() -&gt; "thisIsNormalString"</td>
+						<td>
+							Convert sentence to camel case. eg.
+							<br />
+							"this is normal string".toCamelCase()
+							<br />
+							-&gt; "thisIsNormalString"
+						</td>
 					</tr>
 					<tr>
 						<td>.toKebabCase()</td>
-						<td>Convert sentence to kebab case. eg. "this is normal string".toKebabCase() -&gt; "this-is-normal-string"</td>
+						<td>
+							Convert sentence to kebab case. eg.
+							<br />
+							"this is normal string".toKebabCase()
+							<br />
+							-&gt; "this-is-normal-string"
+						</td>
 					</tr>
 					<tr>
 						<td>.toPascalCase()</td>
-						<td>Convert sentence to pascal case. eg. "this is normal string".toPascalCase() -&gt; "ThisIsNormalString"</td>
+						<td>
+							Convert sentence to pascal case. eg.
+							<br />
+							"this is normal string".toPascalCase()
+							<br />
+							-&gt; "ThisIsNormalString"
+						</td>
 					</tr>
 					<tr>
 						<td>.toSnakeCase()</td>
-						<td>Convert sentence to snake case. eg. "this is normal string".toSnakeCase() -&gt; "this_is_normal_string"</td>
+						<td>
+							Convert sentence to snake case. eg.
+							<br />
+							"this is normal string".toSnakeCase()
+							<br />
+							-&gt; "this_is_normal_string"
+						</td>
 					</tr>
 					<tr>
 						<td>.left(n)</td>
-						<td>Extract number of characters from left. eg. "this is normal string".left(6) -&gt; "this i"</td>
+						<td>
+							Extract number of characters from left. eg.
+							<br />
+							"this is normal string".left(6)
+							<br />
+							-&gt; "this i"
+						</td>
 					</tr>
 					<tr>
 						<td>.right(n)</td>
-						<td>Extract number of characters from right. eg. "this is normal string".right(4) -&gt; "ring"</td>
+						<td>
+							Extract number of characters from right. eg.
+							<br />
+							"this is normal string".right(4)
+							<br />
+							-&gt; "ring"
+						</td>
 					</tr>
 					<tr>
 						<td>.mid(m,n)</td>
-						<td>Extract number of characters (n) from given index (m). eg "this is normal string".mid(8,6) -&gt; "normal"</td>
+						<td>
+							Extract number of characters (n) from given index (m). eg.
+							<br />
+							"this is normal string".mid(8,6)
+							<br />
+							-&gt; "normal"
+						</td>
 					</tr>
 					<tr>
 						<td>.reverse()</td>
-						<td>Reverses the string. eg. "this is normal string".reverse() -&gt; "gnirts lamron si siht"</td>
+						<td>
+							Reverses the string. eg.
+							<br />
+							"this is normal string".reverse()
+							<br />
+							-&gt; "gnirts lamron si siht"
+						</td>
 					</tr>
 					<tr>
 						<td>.sort()</td>
-						<td>Sort string letters in assending order. eg. "this is normal string".sort() -&gt; " aghiiilmnnorrssstt"</td>
+						<td>
+							Sort string letters in assending order. eg.
+							<br />
+							"this is normal string".sort()
+							<br />
+							-&gt; " aghiiilmnnorrssstt"
+						</td>
 					</tr>
 					<tr>
 						<td>.sort(fn)</td>
-						<td>Sort string letters according to compare function (fn) passed. . eg. "this is normal string".sort((a, b) =&gt; (a &lt; b ? 1 : -1)) -&gt; "ttsssrronnmliiihga "</td>
+						<td>
+							Sort string letters according to compare function (fn) passed. . eg.
+							<br />
+							"this is normal string".sort((a, b) =&gt; (a &lt; b ? 1 : -1))
+							<br />
+							-&gt; "ttsssrronnmliiihga "
+						</td>
 					</tr>
 					<tr>
 						<td>.sortAsc()</td>
-						<td>Sort string letters in assending order. eg. "this is normal string".sortAsc() -&gt; " aghiiilmnnorrssstt"</td>
+						<td>
+							Sort string letters in assending order. eg.
+							<br />
+							"this is normal string".sortAsc()
+							<br />
+							-&gt; " aghiiilmnnorrssstt"
+						</td>
 					</tr>
 					<tr>
 						<td>.sortDesc()</td>
-						<td>Sort string letters in descending order. eg. "this is normal string".sortDesc() -&gt; "ttsssrronnmliiihga "</td>
+						<td>
+							Sort string letters in descending order. eg.
+							<br />
+							"this is normal string".sortDesc()
+							<br />
+							-&gt; "ttsssrronnmliiihga "
+						</td>
 					</tr>
 					<tr>
 						<td>.distinct()</td>
-						<td>Extract unique/distinct characters from string and return string. eg. "this is normal string".distinct() -&gt; "this normalg"</td>
+						<td>
+							Extract unique/distinct characters from string and return string. eg.
+							<br />
+							"this is normal string".distinct()
+							<br />
+							-&gt; "this normalg"
+						</td>
 					</tr>
 					<tr>
 						<td>.toNumber()</td>
-						<td>Convert string number to numeric value or NaN. eg. "123.45".toNumber() -&gt; 123.45</td>
+						<td>
+							Convert string number to numeric value or NaN. eg.
+							<br />
+							"123.45".toNumber()
+							<br />
+							-&gt; 123.45
+						</td>
 					</tr>
 					<tr>
 						<td>.toNumber()</td>
-						<td>Convert string number to numeric value or NaN. eg. "a123.45".toNumber() -&gt; NaN</td>
+						<td>
+							Convert string number to numeric value or NaN. eg.
+							<br />
+							"a123.45".toNumber()
+							<br />
+							-&gt; NaN
+						</td>
 					</tr>
 					<tr>
 						<td>.toNumber(NaN_Value)</td>
-						<td>Convert string number to numeric value. on fail return NaN_Value. eg. "a123.45".toNumber(0) -&gt; 0</td>
+						<td>
+							Convert string number to numeric value. on fail return NaN_Value. eg.
+							<br />
+							"a123.45".toNumber(0)
+							<br />
+							-&gt; 0
+						</td>
 					</tr>
 					<tr>
 						<td>.toNumber(itself)</td>
-						<td>Convert string number to numeric value. on fail return original string itself. eg. "a123.45".toNumber(itself) -&gt; "a123.45"</td>
+						<td>
+							Convert string number to numeric value. on fail return original string itself. eg.
+							<br />
+							"a123.45".toNumber(itself)
+							<br />
+							-&gt; "a123.45"
+						</td>
 					</tr>
 					<tr>
 						<td>.parseInt()</td>
-						<td>Convert string to integer value and round up the fraction value. eg. "123.45".parseInt() -&gt; 123</td>
+						<td>
+							Convert string to integer value and round up the fraction value. eg.
+							<br />
+							"123.45".parseInt()
+							<br />
+							-&gt; 123
+						</td>
 					</tr>
 					<tr>
 						<td>.parseInt()</td>
-						<td>Convert string to integer value and round up the fraction value. eg. "a123.45".parseInt() -&gt; NaN</td>
+						<td>
+							Convert string to integer value and round up the fraction value. eg.
+							<br />
+							"a123.45".parseInt()
+							<br />
+							-&gt; NaN
+						</td>
 					</tr>
 					<tr>
 						<td>.parseInt(redix)</td>
-						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".parseInt(16) -&gt; 44847</td>
+						<td>
+							Convert string to integer value on the basis of basevalue/redix. eg.
+							<br />
+							"AF2F".parseInt(16)
+							<br />
+							-&gt; 44847
+						</td>
 					</tr>
 					<tr>
 						<td>.parseInt(redix,NaN_Value)</td>
-						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".parseInt(10,0) -&gt; 0</td>
+						<td>
+							Convert string to integer value on the basis of basevalue/redix. eg.
+							<br />
+							"AF2F".parseInt(10,0)
+							<br />
+							-&gt; 0
+						</td>
 					</tr>
 					<tr>
 						<td>.parseInt(redix,itself)</td>
-						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".parseInt(8,itself) -&gt; "AF2F"</td>
+						<td>
+							Convert string to integer value on the basis of basevalue/redix. eg.
+							<br />
+							"AF2F".parseInt(8,itself)
+							<br />
+							-&gt; "AF2F"
+						</td>
 					</tr>
 					<tr>
 						<td>.parseFloat()</td>
-						<td>Convert string number to numeric value or NaN. eg. "123.45".parseFloat() -&gt; 123.45</td>
+						<td>
+							Convert string number to numeric value or NaN. eg.
+							<br />
+							"123.45".parseFloat()
+							<br />
+							-&gt; 123.45
+						</td>
 					</tr>
 					<tr>
 						<td>.parseFloat()</td>
-						<td>Convert string number to numeric value or NaN. eg. "a123.45".parseFloat() -&gt; NaN</td>
+						<td>
+							Convert string number to numeric value or NaN. eg.
+							<br />
+							"a123.45".parseFloat()
+							<br />
+							-&gt; NaN
+						</td>
 					</tr>
 					<tr>
 						<td>.parseFloat(NaN_Value)</td>
-						<td>Convert string number to numeric value. on fail return NaN_Value. eg. "a123.45".parseFloat(0) -&gt; 0</td>
+						<td>
+							Convert string number to numeric value. on fail return NaN_Value. eg.
+							<br />
+							"a123.45".parseFloat(0)
+							<br />
+							-&gt; 0
+						</td>
 					</tr>
 					<tr>
 						<td>.parseFloat(itself)</td>
-						<td>Convert string number to numeric value. on fail return original string itself. eg. "a123.45".parseFloat(itself) -&gt; "a123.45"</td>
+						<td>
+							Convert string number to numeric value. on fail return original string itself. eg.
+							<br />
+							"a123.45".parseFloat(itself)
+							<br />
+							-&gt; "a123.45"
+						</td>
 					</tr>
 					<tr>
 						<td>.toInt()</td>
-						<td>Convert string to integer value and round up the fraction value. eg. "123.45".toInt() -&gt; 123</td>
+						<td>
+							Convert string to integer value and round up the fraction value. eg.
+							<br />
+							"123.45".toInt()
+							<br />
+							-&gt; 123
+						</td>
 					</tr>
 					<tr>
 						<td>.toInt()</td>
-						<td>Convert string to integer value and round up the fraction value. eg. "a123.45".toInt() -&gt; NaN</td>
+						<td>
+							Convert string to integer value and round up the fraction value. eg.
+							<br />
+							"a123.45".toInt()
+							<br />
+							-&gt; NaN
+						</td>
 					</tr>
 					<tr>
 						<td>.toInt(redix)</td>
-						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".toInt(16) -&gt; 44847</td>
+						<td>
+							Convert string to integer value on the basis of basevalue/redix. eg.
+							<br />
+							"AF2F".toInt(16)
+							<br />
+							-&gt; 44847
+						</td>
 					</tr>
 					<tr>
 						<td>.toInt(redix,NaN_Value)</td>
-						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".toInt(10,0) -&gt; 0</td>
+						<td>
+							Convert string to integer value on the basis of basevalue/redix. eg.
+							<br />
+							"AF2F".toInt(10,0)
+							<br />
+							-&gt; 0
+						</td>
 					</tr>
 					<tr>
 						<td>.toInt(redix,itself)</td>
-						<td>Convert string to integer value on the basis of basevalue/redix. eg. "AF2F".toInt(8,itself) -&gt; "AF2F"</td>
+						<td>
+							Convert string to integer value on the basis of basevalue/redix. eg.
+							<br />
+							"AF2F".toInt(8,itself)
+							<br />
+							-&gt; "AF2F"
+						</td>
 					</tr>
 					<tr>
 						<td>.toFloat()</td>
-						<td>Convert string number to numeric value or NaN. eg. "123.45".toFloat() -&gt; 123.45</td>
+						<td>
+							Convert string number to numeric value or NaN. eg.
+							<br />
+							"123.45".toFloat()
+							<br />
+							-&gt; 123.45
+						</td>
 					</tr>
 					<tr>
 						<td>.toFloat()</td>
-						<td>Convert string number to numeric value or NaN. eg. "a123.45".toFloat() -&gt; NaN</td>
+						<td>
+							Convert string number to numeric value or NaN. eg.
+							<br />
+							"a123.45".toFloat()
+							<br />
+							-&gt; NaN
+						</td>
 					</tr>
 					<tr>
 						<td>.toFloat(NaN_Value)</td>
-						<td>Convert string number to numeric value. on fail return NaN_Value. eg. "a123.45".toFloat(0) -&gt; 0</td>
+						<td>
+							Convert string number to numeric value. on fail return NaN_Value. eg.
+							<br />
+							"a123.45".toFloat(0)
+							<br />
+							-&gt; 0
+						</td>
 					</tr>
 					<tr>
 						<td>.toFloat(itself)</td>
-						<td>Convert string number to numeric value. on fail return original string itself. eg. "a123.45".toFloat(itself) -&gt; "a123.45"</td>
+						<td>
+							Convert string number to numeric value. on fail return original string itself. eg.
+							<br />
+							"a123.45".toFloat(itself)
+							<br />
+							-&gt; "a123.45"
+						</td>
 					</tr>
 					<tr>
 						<td>.isNaN()</td>
-						<td>Check wheter string can be convert to numeric or not. return true/false. eg. "1234.56".isNaN() -&gt; false</td>
+						<td>
+							Check wheter string can be convert to numeric or not. return true/false. eg.
+							<br />
+							"1234.56".isNaN()
+							<br />
+							-&gt; false
+						</td>
 					</tr>
 					<tr>
 						<td>.isNaN()</td>
-						<td>Check wheter string can be convert to numeric or not. return true/false. eg. "a1234.56".isNaN() -&gt; true</td>
+						<td>
+							Check wheter string can be convert to numeric or not. return true/false. eg.
+							<br />
+							"a1234.56".isNaN()
+							<br />
+							-&gt; true
+						</td>
 					</tr>
 					<tr>
 						<td>.isNaN(NaN_Value)</td>
-						<td>Convert string to numeric value. eg. "1234.56".isNaN(0) -&gt; 1234.56</td>
+						<td>
+							Convert string to numeric value. eg.
+							<br />
+							"1234.56".isNaN(0)
+							<br />
+							-&gt; 1234.56
+						</td>
 					</tr>
 					<tr>
 						<td>.isNaN(NaN_Value)</td>
-						<td>Convert string to numeric value. eg. "a1234.56".isNaN(0) -&gt; 0</td>
+						<td>
+							Convert string to numeric value. eg.
+							<br />
+							"a1234.56".isNaN(0)
+							<br />
+							-&gt; 0
+						</td>
 					</tr>
 					<tr>
 						<td>.isNaN(itself)</td>
-						<td>Convert string to numeric value. eg. "a1234.56".isNaN(itself) -&gt; "a1234.56"</td>
+						<td>
+							Convert string to numeric value. eg.
+							<br />
+							"a1234.56".isNaN(itself)
+							<br />
+							-&gt; "a1234.56"
+						</td>
+					</tr>
+					<tr>
+						<td>.toArray()</td>
+						<td>
+							Convert strint to characters array. eg.
+							<br />
+							"abcd".toArray()
+							<br />
+							-&gt; ["a", "b", "c", "d"]
+						</td>
+					</tr>
+					<tr>
+						<td>.toCodeArray()</td>
+						<td>
+							Convert string to array of character ascii/unicode code. eg.
+							<br />
+							"abcde".toCodeArray()
+							<br />
+							-&gt; [97, 98, 99, 100, 101]
+						</td>
+					</tr>
+					<tr>
+						<td>.toCharCodeArray()</td>
+						<td>
+							Convert string to array of object {char:'char',code:number}. eg.
+							<br />
+							"abcde".toCharCodeArray()
+							<br />
+							-&gt; [{char: "a", code: 97},{char: "b", code: 98},{char: "c", code: 99},{char: "d", code: 100},{char: "e", code: 101}]
+						</td>
+					</tr>
+					<tr>
+						<td>.toCharCode()</td>
+						<td>
+							Convert string to object {char:code,char:code} eg.
+							<br />
+							"abcd".toCharCode()
+							<br />
+							-&gt; { a : 97, b : 98, c : 99, d : 100 }
+						</td>
+					</tr>
+					<tr>
+						<td>.frequency()</td>
+						<td>
+							Calculate frequency of charactes in string and return object having character as key and frequency as value. eg.
+							<br />
+							"this is a sample string".frequency()
+							<br />
+							-&gt; {" ": 4, a: 2, e: 1, g: 1, h: 1, i: 3, l: 1, m: 1, n: 1, p: 1, r: 1, s: 4, t: 2}
+							<br />
+							"thisIsASampleString".frequency()
+							<br />
+							-&gt; {A: 1,I: 1,S: 2,a: 1,e: 1,g: 1,h: 1,i: 2,l: 1,m: 1,n: 1,p: 1,r: 1,s: 2,t: 2}
+						</td>
+					</tr>
+					<tr>
+						<td>.frequency(isInSensitive)</td>
+						<td>
+							Optional if true then it matches without case check(ignore case) eg.
+							<br />
+							"thisIsASampleString".frequency(true)
+							<br />
+							-&gt; {a: 2,e: 1,g: 1,h: 1,i: 3,l: 1,m: 1,n: 1,p: 1,r: 1,s: 4,t: 2}
+						</td>
+					</tr>
+					<tr>
+						<td>.frequency(char)</td>
+						<td>
+							Optional Character if passed then return only that char frequency. eg
+							<br />
+							"thisIsASampleString".frequency('i')
+							<br />
+							-&gt; 2
+						</td>
+					</tr>
+					<tr>
+						<td>.frequency(char,isInSensitive)</td>
+						<td>
+							return frequency of char with ignore case. eg.
+							<br />
+							"thisIsASampleString".frequency('i', true)
+							<br />
+							-&gt; 3
+						</td>
+					</tr>
+					<tr>
+						<td>.toDateTime()</td>
+						<td>
+							Convert any valid string date to Date data type. If unable to convert the given string to date return date value of "1-JAN-1900" date data type. eg.
+							<br />
+							"1-jan-2021".toDateTime()
+							<br />
+							-&gt; Fri Jan 01 2021 00:00:00 GMT+0530 (India Standard Time)
+							<br />
+							"1-Mar".toDateTime()
+							<br />
+							-&gt; Mon Mar 01 2021 00:00:00 GMT+0530 (India Standard Time)
+							<br />
+							"Mar,2022".toDateTime()
+							<br />
+							-&gt; Tue Mar 01 2022 00:00:00 GMT+0530 (India Standard Time)
+							<br />
+							"2021".toDateTime()
+							<br />
+							-&gt; Fri Jan 01 2021 05:30:00 GMT+0530 (India Standard Time)
+							<br />
+							"1/5/2021".toDateTime()
+							<br />
+							-&gt; Sat May 01 2021 00:00:00 GMT+0530 (India Standard Time)
+							<br />
+							"01/05/2021 5:55 AM".toDateTime()
+							<br />
+							-&gt; Sat May 01 2021 05:55:00 GMT+0530 (India Standard Time)
+							<br />
+							"01/08/2021 5:15:16 PM".toDateTime()
+							<br />
+							-&gt; Sun Aug 01 2021 17:15:16 GMT+0530 (India Standard Time)
+							<br />
+							"12:15:16 AM".toDateTime()
+							<br />
+							-&gt; Thu Aug 05 2021 00:15:16 GMT+0530 (India Standard Time)
+							<br />
+							//current date with given time
+							<br />
+							"invalid date string".toDateTime()
+							<br />
+							-&gt; Mon Jan 01 1900 00:00:00 GMT+0521 (India Standard Time)
+						</td>
+					</tr>
+					<tr>
+						<td>.toDate()</td>
+						<td>
+							Convert String to only Date value exclude time value. eg.
+							<br />
+							"05-Aug-2021 05:25:15 AM".toDate()
+							<br />
+							-&gt; Thu Aug 05 2021 00:00:00 GMT+0530 (India Standard Time)
+						</td>
+					</tr>
+					<tr>
+						<td><strong>.isString</strong></td>
+						<td>
+							[Boolean Property] return
+							<strong>true</strong>
+							if variable value is string else
+							<strong>undefined</strong>
+							. eg.
+							<br />
+							"abcd".isString
+							<br />
+							-&gt; true
+							<br />
+							let a="string";
+							<br />
+							a.isString
+							<br />
+							-&gt;true
+							<br />
+							let b=34;
+							<br />
+							b.isString;
+							<br />
+							-&gt; undefined
+						</td>
 					</tr>
 				</tbody>
 			</table>
+			<br />
+			<br />
+			<br />
+
+			<h2>Date Prototype Extensions</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Date.methods</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							.format(
+							<em>strFormat</em>
+							)
+						</td>
+						<td>
+							Convert Date to String in given format string.
+							<br />
+							Format String Description:
+							<br />
+							<table>
+								<tbody>
+									<tr>
+										<th>specifier</th>
+										<th>description</th>
+									</tr>
+									<tr>
+										<td>d</td>
+										<td>one or two digit date value</td>
+									</tr>
+									<tr>
+										<td>dd</td>
+										<td>two digit date value leading zero if one digit date</td>
+									</tr>
+									<tr>
+										<td>ddd</td>
+										<td>three char week day name</td>
+									</tr>
+									<tr>
+										<td>dddd</td>
+										<td>full week day name</td>
+									</tr>
+									<tr>
+										<td>M</td>
+										<td>one or two digit month value</td>
+									</tr>
+									<tr>
+										<td>MM</td>
+										<td>two digit month value. leading zero if one digit month</td>
+									</tr>
+									<tr>
+										<td>MMM</td>
+										<td>three char month name</td>
+									</tr>
+									<tr>
+										<td>MMMM</td>
+										<td>full month name</td>
+									</tr>
+									<tr>
+										<td>yy</td>
+										<td>two digit year value</td>
+									</tr>
+									<tr>
+										<td>yyyy</td>
+										<td>four digit year value</td>
+									</tr>
+									<tr>
+										<td>h</td>
+										<td>one or two digit hour value</td>
+									</tr>
+									<tr>
+										<td>hh</td>
+										<td>two digit hour value. leading zero if one digit hour</td>
+									</tr>
+									<tr>
+										<td>H</td>
+										<td>one or two digit hour value in 24 hour format</td>
+									</tr>
+									<tr>
+										<td>HH</td>
+										<td>two digit hour value in 24 hour format</td>
+									</tr>
+									<tr>
+										<td>m</td>
+										<td>one or two digit minute value</td>
+									</tr>
+									<tr>
+										<td>mm</td>
+										<td>two digit minute value</td>
+									</tr>
+									<tr>
+										<td>s</td>
+										<td>one or two digit second value</td>
+									</tr>
+									<tr>
+										<td>ss</td>
+										<td>two digit second value</td>
+									</tr>
+									<tr>
+										<td>fff</td>
+										<td>miliseconds value</td>
+									</tr>
+									<tr>
+										<td>tt</td>
+										<td>AM/PM value</td>
+									</tr>
+								</tbody>
+							</table>
+							<table>
+								<tbody>
+									<tr><th>Examples : let date = "8-April-2021 11:35:48 PM".toDateTime()</th></tr>
+									<tr><td>date</td></tr>
+									<tr><td>-&gt; Thu Apr 08 2021 23:35:48 GMT+0530 (India Standard Time)</td></tr>
+									<tr><td>date.format("ddd dd-MMM-yyyy hh:mm:ss:fff tt")</td></tr>
+									<tr><td>-&gt; "Thu 08-Apr-2021 11:35:48:000 PM"</td></tr>
+									<tr><td>date.format("dddd dd/MMM/yyyy")</td></tr>
+									<tr><td>-&gt; "Thursday 08/Apr/2021"</td></tr>
+									<tr><td>date.format("HH:mm:ss:fff")</td></tr>
+									<tr><td>-&gt; "23:35:48:000"</td></tr>
+									<tr><td>date.format("dd/MM/yy")</td></tr>
+									<tr><td>-&gt; "08/04/21"</td></tr>
+									<tr><td>date.format("d/M/y")</td></tr>
+									<tr><td>-&gt; "8/4/21"</td></tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.addDays(
+							<em>num</em>
+							)
+						</td>
+						<td>
+							This is Date extension method that adds number of days in Date value
+							<br />
+							'1 jan 2022'.toDateTime().addDays(10)
+							<br />
+							-&gt; Tue Jan 11 2022 00:00:00 GMT+0530 (India Standard Time)
+							<br />
+							'1 jan 2022'.toDateTime().addDays(-10)
+							<br />
+							-&gt; Wed Dec 22 2021 00:00:00 GMT+0530 (India Standard Time)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.addMonths(
+							<em>num</em>
+							)
+						</td>
+						<td>
+							This is Date extension method that adds number of months in Date value
+							<br />
+							'1 jan 2022'.toDateTime().addMonths(10)
+							<br />
+							-&gt; Tue Nov 01 2022 00:00:00 GMT+0530 (India Standard Time)
+							<br />
+							'1 jan 2022'.toDateTime().addMonths(-10)
+							<br />
+							-&gt; Mon Mar 01 2021 00:00:00 GMT+0530 (India Standard Time)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.addYears(
+							<em>num</em>
+							)
+						</td>
+						<td>
+							This is Date extension method that adds number of years in Date value
+							<br />
+							'1 jan 2022'.toDateTime().addYears(10)
+							<br />
+							-&gt; Thu Jan 01 2032 00:00:00 GMT+0530 (India Standard Time)
+							<br />
+							'1 jan 2022'.toDateTime().addYears(-10)
+							<br />
+							-&gt; Sun Jan 01 2012 00:00:00 GMT+0530 (India Standard Time)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.addHours(
+							<em>num</em>
+							)
+						</td>
+						<td>
+							This is Date extension method that adds number of hours in Date value
+							<br />
+							'1 jan 2022 08:12:18 AM'.toDateTime().addHours(10)
+							<br />
+							-&gt; Sat Jan 01 2022 18:12:18 GMT+0530 (India Standard Time)
+							<br />
+							'1 jan 2022 08:12:18 AM'.toDateTime().addHours(-10)
+							<br />
+							-&gt; Fri Dec 31 2021 22:12:18 GMT+0530 (India Standard Time)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.addMinutes(
+							<em>num</em>
+							)
+						</td>
+						<td>
+							This is Date extension method that adds number of minutes in Date value
+							<br />
+							'1 jan 2022 08:12:18 AM'.toDateTime().addMinutes(10)
+							<br />
+							-&gt; Sat Jan 01 2022 08:22:18 GMT+0530 (India Standard Time)
+							<br />
+							'1 jan 2022 08:12:18 AM'.toDateTime().addMinutes(-10)
+							<br />
+							-&gt; Sat Jan 01 2022 08:02:18 GMT+0530 (India Standard Time)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.addSeconds(
+							<em>num</em>
+							)
+						</td>
+						<td>
+							This is Date extension method that adds number of seconds in Date value
+							<br />
+							'1 jan 2022 08:12:18 AM'.toDateTime().addSeconds(10)
+							<br />
+							-&gt; Sat Jan 01 2022 08:12:28 GMT+0530 (India Standard Time)
+							<br />
+							'1 jan 2022 08:12:18 AM'.toDateTime().addSeconds(-10)
+							<br />
+							-&gt; Sat Jan 01 2022 08:12:08 GMT+0530 (India Standard Time)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.dateDiff(
+							<em>date</em>
+							)
+						</td>
+						<td>
+							This is Date extension method that subtract given date and return difference in days
+							<br />
+							let a = '1 jan 2022'.toDateTime()
+							<br />
+							let b = '1 jan 2020'.toDateTime()
+							<br />
+							a.dateDiff(b)
+							<br />
+							-&gt; -731
+							<br />
+							let a = '1 jan 2022 10:20 AM'.toDateTime()
+							<br />
+							let b = '1 jan 2025 10:20 PM'.toDateTime()
+							<br />
+							a.dateDiff(b)
+							<br />
+							-&gt; 1096.5
+						</td>
+					</tr>
+					<tr>
+						<td>.toNumber()</td>
+						<td>
+							Convert Date to Numeric value in milliseconds. eg.
+							<br />
+							'15 Aug 2021 8:30 AM'.toDateTime().toNumber();
+							<br />
+							-&gt; 1628996400000
+						</td>
+					</tr>
+					<tr>
+						<td><strong>.isDate</strong></td>
+						<td>
+							[boolean property] return
+							<strong>true</strong>
+							if a variable holds date value else
+							<strong>undefined</strong>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<br />
+			<br />
+			<br />
+			<h2>Number Prototype Extensions</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Number.methods</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.isNaN()</td>
+						<td>
+							[boolean] return true or false if variable holds NaN value or Infinity then
+							<strong>true</strong>
+							else
+							<strong>false</strong>
+							eg.
+							<br />
+							let a = "45".toNumber();
+							<br />
+							a.isNaN();
+							<br />
+							-&gt; false
+							<br />
+							let b = "a45".toNumber();
+							<br />
+							b.isNaN();
+							<br />
+							-&gt; true
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.isNaN(
+							<em>nanValue</em>
+							)
+						</td>
+						<td>
+							check variable value if NaN or Infinity then nanValue else the numeric value itself. eg.
+							<br />
+							let a = "45".toNumber();
+							<br />
+							a.isNaN(0);
+							<br />
+							-&gt; 45
+							<br />
+							let b = "a45".toNumber();
+							<br />
+							b.isNaN(0);
+							<br />
+							-&gt; 0
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.isNaN(
+							<em>itself</em>
+							)
+						</td>
+						<td>
+							check variable value if NaN or Infinity then variable's value else the numeric value. eg.
+							<br />
+							let a = "45".toNumber();
+							<br />
+							a.isNaN(itself);
+							<br />
+							-&gt; 45
+							<br />
+							let b = "a45".toNumber();
+							<br />
+							b.isNaN(itself);
+							<br />
+							-&gt; NaN
+						</td>
+					</tr>
+					<tr>
+						<td>..toChar()</td>
+						<td>
+							Convert Numeric value to character string according to their ASCII/UNICODE. eg.
+							<br />
+							(65).toChar();
+							<br />
+							-&gt; 'A'
+							<br />
+							(9829).toChar();
+							<br />
+							-&gt; "
+							<g-emoji class="g-emoji" alias="hearts" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2665.png">♥</g-emoji>
+							"
+							<br />
+							(9786).toChar();
+							<br />
+							-&gt; "
+							<g-emoji class="g-emoji" alias="relaxed" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/263a.png">☺</g-emoji>
+							"
+						</td>
+					</tr>
+					<tr>
+						<td>
+							.format(
+							<em>strFormat</em>
+							)
+						</td>
+						<td>
+							Convert numeric value to string with comma separated or with pad zero. depends of format string that is passed to it as argument.
+							<br />
+							Invalid format string then the number convert to string with local number format.
+							<table>
+								<tbody>
+									<tr>
+										<th>Format Specifier</th>
+										<th>Description</th>
+									</tr>
+									<tr>
+										<td>#</td>
+										<td>Number or Blank</td>
+									</tr>
+									<tr>
+										<td>0</td>
+										<td>Number or Zero</td>
+									</tr>
+									<tr>
+										<td>,</td>
+										<td>Specify Comma Places</td>
+									</tr>
+									<tr>
+										<td>.</td>
+										<td>Decimal Position</td>
+									</tr>
+								</tbody>
+							</table>
+							<br />
+							example:
+							<table>
+								<tbody>
+									<tr>
+										<th>Example</th>
+										<th>Output</th>
+									</tr>
+									<tr>
+										<td>(12345679).format("#,##,##0.00")</td>
+										<td>"1,23,45,679.00"</td>
+									</tr>
+									<tr>
+										<td>(.123).format("#,##,##0.00")</td>
+										<td>"0.12"</td>
+									</tr>
+									<tr>
+										<td>(123).format("000000")</td>
+										<td>"000123"</td>
+									</tr>
+									<tr>
+										<td>(123412341234).format("####,####,####").replaceAll("," , "-")</td>
+										<td>"1234-1234-1234"</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>.toDate()</td>
+						<td>
+							Convert milliseconds numeric value to Date value. eg.
+							<br />
+							(1628996400000).toDate();
+							<br />
+							-&gt; Sun Aug 15 2021 08:30:00 GMT+0530 (India Standard Time)
+						</td>
+					</tr>
+					<tr>
+						<td><strong>.isNumber</strong></td>
+						<td>
+							[boolean property] return
+							<strong>true</strong>
+							if a variable holds numeric value else
+							<strong>undefined</strong>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<br />
+			<br />
+
+			<h2>Array Prototype Extensions</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Array.methods</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.toSet()</td>
+						<td>Convert Array to new Set. Set of unique values.</td>
+					</tr>
+					<tr>
+						<td>
+							.contains(
+							<em>val</em>
+							)
+						</td>
+						<td>
+							This Array extension method searches value in array and return boolean
+							<strong>true/false</strong>
+							<br />
+							return
+							<strong>true</strong>
+							if value found in array with exact matches. object with same properties and value. eg.
+							<br />
+							[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains('a')
+							<br />
+							-&gt; true
+							<br />
+							[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains('b')
+							<br />
+							-&gt; false
+							<br />
+							[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains(2.5)
+							<br />
+							-&gt; false
+							<br />
+							[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains('2.5')
+							<br />
+							-&gt; true
+							<br />
+							[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains({a:1})
+							<br />
+							-&gt; false
+							<br />
+							[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains({b:2,a:1})
+							<br />
+							-&gt; true
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>.unique()</td>
+						<td>
+							This array extension method return new array having distinct/unique values
+							<br />
+							this compare array value deep search and check equality for finding unique value
+							<br />
+							note : it not clone the array so both array reference is same object.
+							<br />
+							return new array with unique values reference to original. eg.
+							<br />
+							[1, 2, 5, 4, 1, 2, 5, 8, 2, 5].unique();
+							<br />
+							-&gt; [1, 2, 5, 4, 8]
+							<br />
+							[{a:true, b:false}, {a:true, b:false}, {a:false, b:false}, {a:true, b:false}].unique();
+							<br />
+							-&gt; [{a:true, b:false}, {a:false, b:false}]
+						</td>
+					</tr>
+					<tr>
+						<td><strong>isArray</strong></td>
+						<td>
+							[boolean property] return
+							<strong>true</strong>
+							if a variable holds Array value else
+							<strong>undefined</strong>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<br />
+			<br />
+			<h2>Set Prototype Extensions</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Set.methods</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.toArray()</td>
+						<td>
+							This Set extension method that convert set to Array.
+							<br />
+							<br />
+							[1,2,3,1,5,4,2,3].toSet().toArray()
+							<br />
+							-&gt; [1, 2, 3, 5, 4]
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<br />
+			<br />
+			<h2>Object Prototype Extensions</h2>
+			<h3>Common to All Data Type Vaiables</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Object.methods</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>.clone()</td>
+						<td>This extension method make clone of any object/array/Date/other values</td>
+					</tr>
+					<tr>
+						<td>
+							.equals(
+							<em>val</em>
+							)
+						</td>
+						<td>
+							This extension method checks for equality of object in deep.
+							<br />
+							<br />
+							let obj1 = {a:true, b:44, c:[1, 2, 3]};
+							<br />
+							let obj2 = {a:true, b:44,c:[1, 2, 3]};
+							<br />
+							obj1.equals(obj2);
+							<br />
+							-&gt; true
+							<br />
+							<br />
+							let obj1 = {a:true, b:44, c:[1, 2, 3, 4]};
+							<br />
+							let obj2 = {a:true, b:44, c:[1, 2, 3]};
+							<br />
+							obj1.equals(obj2);
+							<br />
+							-&gt; false
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 		</div>
 	</body>
 </html>

@@ -17,7 +17,7 @@
 ## How to Install
 copy following code and run on CLI
 
-    npm install multi-range-slider-vue
+    npm install advance-javascript
 
  
   
@@ -131,10 +131,32 @@ copy following code and run on CLI
 |.isNaN( *itself* )|check variable value if NaN or Infinity then variable's value else the numeric value. eg. <br> let a = "45".toNumber();<br> a.isNaN(itself);<br>-> 45<br> let b = "a45".toNumber();<br> b.isNaN(itself);<br>-> NaN|
 |..toChar()|Convert Numeric value to character string according to their ASCII/UNICODE. eg.<br>(65).toChar();<br>-> 'A'<br>(9829).toChar();<br>-> "♥"<br>(9786).toChar();<br>-> "☺"|
 |.format( *strFormat* )|Convert numeric value to string with comma separated or with pad zero. depends of format string that is passed to it as argument.<br>Invalid format string then the number convert to string with local number format.<table><tr><th>Format Specifier</th><th>Description</th></tr><tr><td>#</td><td>Number or Blank</td></tr><tr><td>0</td><td>Number or Zero</td></tr><tr><td>,</td><td>Specify Comma Places</td></tr><tr><td>.</td><td>Decimal Position</td></tr></table><br>example:<table><tr><th>Example</th><th>Output</th></tr><tr><td>(12345679).format("#,##,##0.00")</td><td>"1,23,45,679.00"</td></tr><tr><td>(.123).format("#,##,##0.00")</td><td>"0.12"</td></tr><tr><td>(123).format("000000")</td><td>"000123"</td></tr><tr><td>(123412341234).format("####,####,####").replaceAll("," ,  "-")</td><td>"1234-1234-1234"</td></tr></table>|
-|.toDate()|Convert miliseconds numeric value to Date value. eg. <br> (1628996400000).toDate();<br>-> Sun Aug 15 2021 08:30:00 GMT+0530 (India Standard Time)|
+|.toDate()|Convert milliseconds numeric value to Date value. eg. <br> (1628996400000).toDate();<br>-> Sun Aug 15 2021 08:30:00 GMT+0530 (India Standard Time)|
 |**.isNumber**|[boolean property] return **true** if a variable holds numeric value else **undefined**|
 
 ## Array Prototype Extensions 
 
 |Array.methods|Description|
 |-|-|
+|.toSet()| Convert Array to new Set. Set of unique values.|
+|.contains( *val* )|This Array extension method searches value in array and return boolean **true/false**<br>return **true** if value found in array with exact matches. object with same properties and value. eg. <br> [1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains('a')<br>-> true<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains('b')<br>-> false<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains(2.5)<br>-> false<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains('2.5')<br>-> true<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains({a:1})<br>-> false<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains({b:2,a:1})<br>-> true<br>|
+|.unique()| This array extension method return new array having distinct/unique values <br>this compare array value deep search and check equality for finding unique value<br>note : it not clone the array so both array reference is same object.<br>return new array with unique values reference to original. eg. <br>[1, 2, 5, 4, 1, 2, 5, 8, 2, 5].unique();<br>-> [1, 2, 5, 4, 8]<br>[{a:true, b:false}, {a:true, b:false}, {a:false, b:false}, {a:true, b:false}].unique(); <br>-> [{a:true, b:false}, {a:false, b:false}]|
+|**isArray**| [boolean property] return **true** if a variable holds Array value else **undefined**|
+
+
+## Set Prototype Extensions 
+
+|Set.methods|Description|
+|-|-|
+|.toArray()| This Set extension method that convert set to Array.<br><br>[1,2,3,1,5,4,2,3].toSet().toArray()<br>-> [1, 2, 3, 5, 4]|
+
+
+## Object Prototype Extensions 
+### Common to All Data Type Vaiables
+
+|Object.methods|Description|
+|-|-|
+|.clone()| This extension method make clone of any object/array/Date/other values|
+|.equals( *val* )| This extension method checks for equality of object in deep.<br><br> let obj1 = {a:true, b:44, c:[1, 2, 3]};<br>let obj2 = {a:true, b:44,c:[1, 2, 3]};<br>obj1.equals(obj2);<br>-> true <br><br> let obj1 = {a:true, b:44, c:[1, 2, 3, 4]};<br>let obj2 = {a:true, b:44, c:[1, 2, 3]};<br>obj1.equals(obj2);<br>-> false|
+
+

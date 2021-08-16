@@ -558,7 +558,7 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 		(String.prototype.toDateTime = function toDateTime() {
 			let mmm = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
 			let d = new Date();
-			let dt = { dd: 1, mm: 1, yy: 1900, h: 0, m: 0, s: 0 };
+			let dt = { dd: 1, mm: 1, yy: 1900, h: 0, m: 0, s: 0, f: 0 };
 			let strDate = this.replace(/[,-./ ]/g, ' ').trimAll();
 			let _date = '';
 			let _time = '';
@@ -735,11 +735,12 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 				}
 			}
 
-			if (/^[0-1][0-9]:[0-5][0-9]:[0-5][0-9][ ]{0,1}(am|pm)$/i.test(_time)) {
-				//"08:30:24 PM"
-				dt.h = parseInt(_time.substr(0, 2));
-				dt.m = parseInt(_time.substr(3, 2));
-				dt.s = parseInt(_time.substr(6, 2));
+			if (/^([0-2][0-9]|[0-9])(:([0-5][0-9]|[0-9])){1,2}(:[0-9]{1,3})?[ ]?(am|pm)?$/i.test(_time)) {
+				let ttt = _time.match(/\d+/g);
+				dt.h = parseInt(ttt[0] || 0);
+				dt.m = parseInt(ttt[1] || 0);
+				dt.s = parseInt(ttt[2] || 0);
+				dt.f = parseInt(ttt[3] || 0);
 				if (_time.right(2).toLowerCase() === 'pm') {
 					if (dt.h < 12) {
 						dt.h += 12;
@@ -749,66 +750,6 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 						dt.h = 0;
 					}
 				}
-			} else if (/^[0-9]:[0-5][0-9]:[0-5][0-9][ ]{0,1}(am|pm)$/i.test(_time)) {
-				//"8:30:24 PM"
-				dt.h = parseInt(_time.substr(0, 1));
-				dt.m = parseInt(_time.substr(2, 2));
-				dt.s = parseInt(_time.substr(5, 2));
-				if (_time.right(2).toLowerCase() === 'pm') {
-					if (dt.h < 12) {
-						dt.h += 12;
-					}
-				} else {
-					if (dt.h == 12) {
-						dt.h = 0;
-					}
-				}
-			} else if (/^[0-1][0-9]:[0-5][0-9][ ]{0,1}(am|pm)$/i.test(_time)) {
-				//"08:30 PM"
-				dt.h = parseInt(_time.substr(0, 2));
-				dt.m = parseInt(_time.substr(3, 2));
-
-				if (_time.right(2).toLowerCase() === 'pm') {
-					if (dt.h < 12) {
-						dt.h += 12;
-					}
-				} else {
-					if (dt.h == 12) {
-						dt.h = 0;
-					}
-				}
-			} else if (/^[0-9]:[0-5][0-9][ ]{0,1}(am|pm)$/i.test(_time)) {
-				//"8:30 PM"
-				dt.h = parseInt(_time.substr(0, 1));
-				dt.m = parseInt(_time.substr(2, 2));
-
-				if (_time.right(2).toLowerCase() === 'pm') {
-					if (dt.h < 12) {
-						dt.h += 12;
-					}
-				} else {
-					if (dt.h == 12) {
-						dt.h = 0;
-					}
-				}
-			} else if (/^[0-2][0-9]:[0-5][0-9]:[0-5][0-9]$/i.test(_time)) {
-				//"08:30:25"
-				dt.h = parseInt(_time.substr(0, 2));
-				dt.m = parseInt(_time.substr(3, 2));
-				dt.s = parseInt(_time.substr(6, 2));
-			} else if (/^[0-9]:[0-5][0-9]:[0-5][0-9]$/i.test(_time)) {
-				//"8:30:25"
-				dt.h = parseInt(_time.substr(0, 1));
-				dt.m = parseInt(_time.substr(2, 2));
-				dt.s = parseInt(_time.substr(5, 2));
-			} else if (/^[0-2][0-9]:[0-5][0-9]$/i.test(_time)) {
-				//"08:30"
-				dt.h = parseInt(_time.substr(0, 2));
-				dt.m = parseInt(_time.substr(3, 2));
-			} else if (/^[0-9]:[0-5][0-9]$/i.test(_time)) {
-				//"8:30"
-				dt.h = parseInt(_time.substr(0, 1));
-				dt.m = parseInt(_time.substr(2, 2));
 			}
 
 			if (new Date(1900, 1, 1).getDay() != 0) {
@@ -819,7 +760,7 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 			} else if (dt.yy < 100) {
 				dt.yy += 1900;
 			}
-			d = new Date(dt.yy, dt.mm, dt.dd, dt.h, dt.m, dt.s);
+			d = new Date(dt.yy, dt.mm, dt.dd, dt.h, dt.m, dt.s, dt.f);
 
 			if (isNaN(d)) {
 				d = new Date('1jan1900');

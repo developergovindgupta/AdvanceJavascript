@@ -24,6 +24,7 @@ hr {
 table {
 	border: solid 1px;
 	margin: auto;
+	width: 100%;
 }
 th {
 	padding: 10px;

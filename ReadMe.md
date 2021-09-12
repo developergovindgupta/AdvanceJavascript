@@ -41,6 +41,9 @@ copy following code and run on CLI
 
 ### after it you can use Advance Javascript Extension methods
 
+# Demo
+[React](https://codesandbox.io/s/demo-lf376?file=/src/index.js)
+
 #
 
 # Extension Methods 

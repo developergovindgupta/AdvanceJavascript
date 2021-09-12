@@ -1023,11 +1023,23 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 		});
 	!Number.prototype.toDate &&
 		Object.defineProperty(Number.prototype, 'toDate', {
-			function() {
+			value: function () {
+				return new Date(this);
+			},
+		});
+	!Number.prototype.toDateTime &&
+		Object.defineProperty(Number.prototype, 'toDateTime', {
+			value: function () {
 				return new Date(this);
 			},
 		});
 
+	!Date.prototype.toDateTime &&
+		Object.defineProperty(Date.prototype, 'toDateTime', {
+			value: function () {
+				return this;
+			},
+		});
 	!Date.prototype.format &&
 		Object.defineProperty(Date.prototype, 'format', {
 			value: function (strFormat) {
@@ -1254,7 +1266,7 @@ var global = typeof global !== 'undefined' ? global : typeof self !== 'undefined
 
 	!Date.prototype.toNumber &&
 		Object.defineProperty(Date.prototype, 'toNumber', {
-			function() {
+			value: function () {
 				return this.getTime();
 			},
 		});

@@ -26,3 +26,5 @@ console.log(`
 ╚═════════════════════════════════════════════════════════════════════════╝
 
 `);
+//Object.defineProperty(Date.prototype, 'format', {});
+'test'.toFloat();

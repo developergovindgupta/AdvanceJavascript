@@ -622,7 +622,7 @@ or
 							[Boolean Property] return
 							<strong>true</strong>
 							if variable value is string else
-							<strong>undefined</strong>
+							<strong>false</strong>
 							. eg.
 							<br />
 							"abcd".isString
@@ -639,7 +639,7 @@ or
 							<br />
 							b.isString;
 							<br />
-							-&gt; undefined
+							-&gt; false
 						</td>
 					</tr>
 				</tbody>
@@ -925,7 +925,7 @@ or
 							[boolean property] return
 							<strong>true</strong>
 							if a variable holds date value else
-							<strong>undefined</strong>
+							<strong>false</strong>
 						</td>
 					</tr>
 				</tbody>
@@ -1109,7 +1109,7 @@ or
 							[boolean property] return
 							<strong>true</strong>
 							if a variable holds numeric value else
-							<strong>undefined</strong>
+							<strong>false</strong>
 						</td>
 					</tr>
 				</tbody>
@@ -1197,7 +1197,7 @@ or
 							[boolean property] return
 							<strong>true</strong>
 							if a variable holds Array value else
-							<strong>undefined</strong>
+							<strong>false</strong>
 						</td>
 					</tr>
 				</tbody>
@@ -1270,6 +1270,19 @@ or
 							obj1.equals(obj2);
 							<br />
 							-&gt; false
+						</td>
+					</tr>
+					<tr>
+						<td>.typeof()</td>
+						<td>This extension method return typeof variable</td>
+					</tr>
+					<tr>
+						<td><strong>.isObject</strong></td>
+						<td>
+							[boolean property] return
+							<strong>true</strong>
+							if a variable holds js object value else
+							<strong>false</strong>
 						</td>
 					</tr>
 				</tbody>

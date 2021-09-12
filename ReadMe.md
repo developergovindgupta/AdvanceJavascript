@@ -102,7 +102,7 @@ copy following code and run on CLI
 |.frequency(char,isInSensitive)|return frequency of char with ignore case. eg. <br/>"thisIsASampleString".frequency('i', true) <br/> -> 3|
 |.toDateTime()|Convert any valid string date to Date data type. If unable to convert the given string to date return date value of "1-JAN-1900" date data type. eg. <br/>"1-jan-2021".toDateTime() <br/>-> Fri Jan 01 2021 00:00:00 GMT+0530 (India Standard Time)<br/>"1-Mar".toDateTime()<br/>-> Mon Mar 01 2021 00:00:00 GMT+0530 (India Standard Time)<br/>"Mar,2022".toDateTime()<br/>-> Tue Mar 01 2022 00:00:00 GMT+0530 (India Standard Time)<br/>"2021".toDateTime()<br/>-> Fri Jan 01 2021 05:30:00 GMT+0530 (India Standard Time)<br/>"1/5/2021".toDateTime()<br/>-> Sat May 01 2021 00:00:00 GMT+0530 (India Standard Time)<br/>"01/05/2021 5:55 AM".toDateTime()<br/>-> Sat May 01 2021 05:55:00 GMT+0530 (India Standard Time)<br/>"01/08/2021 5:15:16 PM".toDateTime()<br/>-> Sun Aug 01 2021 17:15:16 GMT+0530 (India Standard Time)<br/>"12:15:16 AM".toDateTime()<br/>-> Thu Aug 05 2021 00:15:16 GMT+0530 (India Standard Time)<br/>//current date with given time<br/>"invalid date string".toDateTime()<br/>-> Mon Jan 01 1900 00:00:00 GMT+0521 (India Standard Time)|
 |.toDate()|Convert String to only Date value exclude time value. eg. <br/>"05-Aug-2021 05:25:15 AM".toDate()<br/>-> Thu Aug 05 2021 00:00:00 GMT+0530 (India Standard Time)|
-|**.isString**|[Boolean Property] return **true** if variable value is string else **undefined**. eg.<br/> "abcd".isString <br> -> true <br>let a="string";<br>a.isString<br>->true<br>let b=34;<br>b.isString;<br>-> undefined|
+|**.isString**|[Boolean Property] return **true** if variable value is string else **false**. eg.<br/> "abcd".isString <br> -> true <br>let a="string";<br>a.isString<br>->true<br>let b=34;<br>b.isString;<br>-> false|
 
 
 ## Date Prototype Extensions 
@@ -118,7 +118,7 @@ copy following code and run on CLI
 |.addSeconds(*num*)| This is Date extension method that adds number of seconds in Date value<br>'1 jan 2022 08:12:18 AM'.toDateTime().addSeconds(10)<br>-> Sat Jan 01 2022 08:12:28 GMT+0530 (India Standard Time)<br>'1 jan 2022 08:12:18 AM'.toDateTime().addSeconds(-10)<br>->  Sat Jan 01 2022 08:12:08 GMT+0530 (India Standard Time)|
 |.dateDiff(*date*)| This is Date extension method that subtract given date and return difference in days<br> let a = '1 jan 2022'.toDateTime()<br>let b = '1 jan 2020'.toDateTime()<br>a.dateDiff(b)<br>->  -731 <br>let a = '1 jan 2022 10:20 AM'.toDateTime() <br>let b = '1 jan 2025 10:20 PM'.toDateTime()<br>a.dateDiff(b) <br>-> 1096.5|
 |.toNumber()|Convert Date to Numeric value in milliseconds. eg. <br>'15 Aug 2021 8:30 AM'.toDateTime().toNumber();<br>-> 1628996400000|
-|**.isDate**|[boolean property] return **true** if a variable holds date value else **undefined**|
+|**.isDate**|[boolean property] return **true** if a variable holds date value else **false**|
 
 
 
@@ -132,7 +132,7 @@ copy following code and run on CLI
 |..toChar()|Convert Numeric value to character string according to their ASCII/UNICODE. eg.<br>(65).toChar();<br>-> 'A'<br>(9829).toChar();<br>-> "♥"<br>(9786).toChar();<br>-> "☺"|
 |.format( *strFormat* )|Convert numeric value to string with comma separated or with pad zero. depends of format string that is passed to it as argument.<br>Invalid format string then the number convert to string with local number format.<table><tr><th>Format Specifier</th><th>Description</th></tr><tr><td>#</td><td>Number or Blank</td></tr><tr><td>0</td><td>Number or Zero</td></tr><tr><td>,</td><td>Specify Comma Places</td></tr><tr><td>.</td><td>Decimal Position</td></tr></table><br>example:<table><tr><th>Example</th><th>Output</th></tr><tr><td>(12345679).format("#,##,##0.00")</td><td>"1,23,45,679.00"</td></tr><tr><td>(.123).format("#,##,##0.00")</td><td>"0.12"</td></tr><tr><td>(123).format("000000")</td><td>"000123"</td></tr><tr><td>(123412341234).format("####,####,####").replaceAll("," ,  "-")</td><td>"1234-1234-1234"</td></tr></table>|
 |.toDate()|Convert milliseconds numeric value to Date value. eg. <br> (1628996400000).toDate();<br>-> Sun Aug 15 2021 08:30:00 GMT+0530 (India Standard Time)|
-|**.isNumber**|[boolean property] return **true** if a variable holds numeric value else **undefined**|
+|**.isNumber**|[boolean property] return **true** if a variable holds numeric value else **false**|
 
 ## Array Prototype Extensions 
 
@@ -141,7 +141,7 @@ copy following code and run on CLI
 |.toSet()| Convert Array to new Set. Set of unique values.|
 |.contains( *val* )|This Array extension method searches value in array and return boolean **true/false**<br>return **true** if value found in array with exact matches. object with same properties and value. eg. <br> [1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains('a')<br>-> true<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains('b')<br>-> false<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains(2.5)<br>-> false<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains('2.5')<br>-> true<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains({a:1})<br>-> false<br>[1, 'a', '2.5', 2.6, {a:false}, {a:1,b:2}].contains({b:2,a:1})<br>-> true<br>|
 |.unique()| This array extension method return new array having distinct/unique values <br>this compare array value deep search and check equality for finding unique value<br>note : it not clone the array so both array reference is same object.<br>return new array with unique values reference to original. eg. <br>[1, 2, 5, 4, 1, 2, 5, 8, 2, 5].unique();<br>-> [1, 2, 5, 4, 8]<br>[{a:true, b:false}, {a:true, b:false}, {a:false, b:false}, {a:true, b:false}].unique(); <br>-> [{a:true, b:false}, {a:false, b:false}]|
-|**isArray**| [boolean property] return **true** if a variable holds Array value else **undefined**|
+|**isArray**| [boolean property] return **true** if a variable holds Array value else **false**|
 
 
 ## Set Prototype Extensions 
@@ -158,5 +158,7 @@ copy following code and run on CLI
 |-|-|
 |.clone()| This extension method make clone of any object/array/Date/other values|
 |.equals( *val* )| This extension method checks for equality of object in deep.<br><br> let obj1 = {a:true, b:44, c:[1, 2, 3]};<br>let obj2 = {a:true, b:44,c:[1, 2, 3]};<br>obj1.equals(obj2);<br>-> true <br><br> let obj1 = {a:true, b:44, c:[1, 2, 3, 4]};<br>let obj2 = {a:true, b:44, c:[1, 2, 3]};<br>obj1.equals(obj2);<br>-> false|
+|.typeof()| This extension method return typeof variable|
+|**isObject**| [boolean property] return **true** if a variable holds JS Object value else **false**|
 
 
